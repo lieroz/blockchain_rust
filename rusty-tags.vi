@@ -301,6 +301,8 @@ Poly1305	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 Poly1305	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^pub struct Poly1305 {$/;"	s
 Pool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^impl Pool {$/;"	c
 Pool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^struct Pool {$/;"	s
+ProofOfWork	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^impl<'a> ProofOfWork<'a> {$/;"	c
+ProofOfWork	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^pub struct ProofOfWork<'a> {$/;"	s
 R	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static R: usize = 10;$/;"	v
 RC	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static RC: [u64; 11 \/* R + 1 *\/] = [$/;"	v
 RCON	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^static RCON: [u32; 10] = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36];$/;"	v
@@ -547,6 +549,7 @@ blake2s_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cry
 blake2s_64k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    pub fn blake2s_64k(bh: & mut Bencher) {$/;"	f	module:bench
 block	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    fn block(&mut self, m: &[u8]) {$/;"	P	implementation:Poly1305
 block	/home/lieroz/blockchain_rust/src/main.rs	/^mod block;$/;"	n
+block	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    block: &'a Block,$/;"	m	struct:ProofOfWork
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<CbcDecryptorProcessor<T>, X>$/;"	m	struct:CbcDecryptor
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<CbcEncryptorProcessor<T>, X>$/;"	m	struct:CbcEncryptor
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<EcbDecryptorProcessor<T>, X>$/;"	m	struct:EcbDecryptor
@@ -697,6 +700,7 @@ d	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.3
 data	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        data: Vec<TestData>$/;"	m	struct:test::Test
 data	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^        data: Vec<u8>,$/;"	m	struct:test::Test
 data	/home/lieroz/blockchain_rust/src/block.rs	/^    data: String,$/;"	m	struct:Block
+data	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn data(&self) -> &str {$/;"	P	implementation:Block
 data_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^    data_len: usize$/;"	m	struct:ChaCha20Poly1305
 dbl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn dbl(&self) -> GeP1P1 {$/;"	P	implementation:GeP2
 dbl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn dbl(&self) -> GeP1P1 {$/;"	P	implementation:GeP3
@@ -838,6 +842,7 @@ full_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cr
 g	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^        fn g(u: u32, v: u32, w: u32) -> u32 {$/;"	f	method:Md5State::process_block
 ge_scalarmult_base	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^pub fn ge_scalarmult_base(a: &[u8]) -> GeP3 {$/;"	f
 generate_blocks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn generate_blocks(&mut self, k: usize, out: &mut [u8]) {$/;"	P	implementation:FortunaGenerator
+generate_pof_border	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    fn generate_pof_border() -> String {$/;"	P	implementation:ProofOfWork
 generate_random_data	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn generate_random_data(&mut self, out: &mut [u8]) {$/;"	P	implementation:FortunaGenerator
 generator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    generator: FortunaGenerator,$/;"	m	struct:Fortuna
 get_cipher	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn get_cipher<'a>(&'a self) -> &'a [u8] {$/;"	P	implementation:test::CbcTest
@@ -869,7 +874,8 @@ has_next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 hash	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn hash() {$/;"	f	module:test
 hash	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^    fn hash(&mut self) {$/;"	P	implementation:Salsa20
 hash	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^    hash: [u64; 8],$/;"	m	struct:Whirlpool
-hash	/home/lieroz/blockchain_rust/src/block.rs	/^    pub hash: String,$/;"	m	struct:Block
+hash	/home/lieroz/blockchain_rust/src/block.rs	/^    hash: String,$/;"	m	struct:Block
+hash	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn hash(&self) -> &str {$/;"	P	implementation:Block
 hc128	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod hc128;$/;"	n
 hc128_10	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    pub fn hc128_10(bh: & mut Bencher) {$/;"	f	module:bench
 hc128_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    pub fn hc128_1k(bh: & mut Bencher) {$/;"	f	module:bench
@@ -1115,6 +1121,7 @@ new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^    pub fn new() -> Whirlpool {$/;"	P	implementation:Whirlpool
 new	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new(data: &str, prev_block_hash: &str) -> Block {$/;"	P	implementation:Block
 new	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn new() -> Blockchain {$/;"	P	implementation:Blockchain
+new	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn new(block: &Block) -> ProofOfWork {$/;"	P	implementation:ProofOfWork
 new_from_owned	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^    pub fn new_from_owned(code: Vec<u8>) -> MacResult {$/;"	P	implementation:MacResult
 new_genesis_block	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new_genesis_block() -> Block {$/;"	P	implementation:Block
 new_keyed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    pub fn new_keyed(outlen: usize, key: &[u8] ) -> Blake2b {$/;"	P	implementation:Blake2b
@@ -1140,6 +1147,8 @@ node_offset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cr
 nonce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            nonce: [u8; 12],$/;"	m	struct:test::test_chacha20_256_tls_vectors_96_nonce::TestVector
 nonce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            nonce: [u8; 8],$/;"	m	struct:test::test_chacha20_256_tls_vectors::TestVector
 nonce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^    nonce: [u8; 8],$/;"	m	struct:test::TestVector
+nonce	/home/lieroz/blockchain_rust/src/block.rs	/^    nonce: u64,$/;"	m	struct:Block
+nonce	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn nonce(&self) -> u64 {$/;"	P	implementation:Block
 not	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn not(self) -> u32x4 {$/;"	P	implementation:u32x4
 o_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^    o_key: Vec<u8>,$/;"	m	struct:Hmac
 offset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    offset : usize,$/;"	m	struct:ChaCha20
@@ -1254,8 +1263,10 @@ position	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 position	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn position(&self) -> usize;$/;"	P	interface:FixedBuffer
 pow25523	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn pow25523(&self) -> Fe {$/;"	P	implementation:Fe
 prepare_columnround	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^macro_rules! prepare_columnround {$/;"	M
+prepare_data	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    fn prepare_data(&self, nonce: u64) -> String {$/;"	P	implementation:ProofOfWork
 prepare_rowround	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^macro_rules! prepare_rowround {$/;"	M
 prev_block_hash	/home/lieroz/blockchain_rust/src/block.rs	/^    prev_block_hash: String,$/;"	m	struct:Block
+prev_block_hash	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn prev_block_hash(&self) -> &str {$/;"	P	implementation:Block
 prk	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hkdf.rs	/^        prk: Vec<u8>,$/;"	m	struct:test::TestVector
 process	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn process(&mut self, input: &[u8], output: &mut [u8]) {$/;"	P	implementation:CtrMode
 process	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn process(&mut self, input: &[u8], output: &mut [u8]) {$/;"	P	implementation:CtrModeX8
@@ -1278,6 +1289,7 @@ process_block	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-
 process_block	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^    pub fn process_block(&mut self, data: &[u8]) {$/;"	P	implementation:Engine512State
 process_scratch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn process_scratch<P: BlockProcessor, X: PaddingProcessor>(me: &mut BlockEngine<P, X>) {$/;"	f	method:BlockEngine::process
 processor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    processor: P,$/;"	m	struct:BlockEngine
+proofofwork	/home/lieroz/blockchain_rust/src/main.rs	/^mod proofofwork;$/;"	n
 push_to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn push_to<W: WriteBuffer>(&mut self, output: &mut W) {$/;"	P	interface:ReadBuffer
 q	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    q: [u32; 512],$/;"	m	struct:Hc128
 r	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    r         : [u32; 5],$/;"	m	struct:Poly1305
@@ -1414,6 +1426,7 @@ rounds4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 rounds4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^    macro_rules! rounds4 {$/;"	M
 rowround	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^fn rowround(state: &mut SalsaState) -> () {$/;"	f
 rsh	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn rsh(self, s: u32) -> u32x4 {$/;"	P	implementation:u32x4
+run	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn run(&self) -> (u64, String) {$/;"	P	implementation:ProofOfWork
 run_full_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn run_full_test<T: CipherTest, E: Encryptor, D: Decryptor>($/;"	f	module:test
 run_inc	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn run_inc<OpFunc, NextInFunc, NextOutFunc>($/;"	f	module:test
 run_inc1_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn run_inc1_test<T: CipherTest, E: Encryptor, D: Decryptor>($/;"	f	module:test
@@ -1610,6 +1623,7 @@ take_read_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ru
 take_read_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn take_read_buffer<'a>(&'a mut self) -> RefReadBuffer<'a> {$/;"	P	implementation:OwnedWriteBuffer
 take_remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn take_remaining(&mut self) -> &[u8] {$/;"	P	interface:ReadBuffer
 take_remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn take_remaining(&mut self) -> &mut [u8] {$/;"	P	interface:WriteBuffer
+target	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    target: String,$/;"	m	struct:ProofOfWork
 temp	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    temp: Vec<u8>$/;"	m	struct:CbcDecryptorProcessor
 temp	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    temp: Vec<u8>$/;"	m	struct:CbcEncryptorProcessor
 test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^mod test {$/;"	n
@@ -1745,6 +1759,7 @@ tests192	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 tests256	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^    fn tests256() -> Vec<Test> {$/;"	f	module:test
 times_x	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn times_x(self) -> Gf128 {$/;"	P	implementation:Gf128
 times_x_reduce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn times_x_reduce(self) -> Gf128 {$/;"	P	implementation:Gf128
+timestamp	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn timestamp(&self) -> u64 {$/;"	P	implementation:Block
 timestamp	/home/lieroz/blockchain_rust/src/block.rs	/^    timestamp: u64,$/;"	m	struct:Block
 to_bits	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^fn to_bits(x: u64) -> (u64, u64) {$/;"	f
 to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn to_bytes(&self) -> [u8; 32] {$/;"	P	implementation:Fe
@@ -1785,6 +1800,7 @@ update	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-
 update	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    fn update(&mut self) {$/;"	P	implementation:ChaCha20
 update_history	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^fn update_history(in_hist: &mut [u8], out_hist: &mut [u8], last_in: &[u8], last_out: &[u8]) {$/;"	f
 util	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod util;$/;"	n
+validate	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn validate(&self) -> bool {$/;"	P	implementation:ProofOfWork
 verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^pub fn verify(message: &[u8], public_key: &[u8], signature: &[u8]) -> bool {$/;"	f
 which	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^        which: u32$/;"	m	struct:tests::CurveGen
 whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod whirlpool;$/;"	n

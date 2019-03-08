@@ -1,6 +1,8 @@
+mod proofofwork;
 mod block;
 mod blockchain;
 
+use proofofwork::ProofOfWork;
 use blockchain::Blockchain;
 
 fn main() {
@@ -11,5 +13,7 @@ fn main() {
 
     for block in &bc.blocks {
         println!("{:?}", block);
+        let pow = ProofOfWork::new(&block);
+        println!("{}", pow.validate());
     }
 }
