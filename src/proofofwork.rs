@@ -14,22 +14,10 @@ pub struct ProofOfWork<'a> {
 }
 
 impl<'a> ProofOfWork<'a> {
-    fn generate_pof_border() -> String {
-        let mut target = String::new();
-        for i in (0..64).rev() {
-            if i == TARGET_BYTE {
-                target.push('1');
-            } else {
-                target.push('0');
-            }
-        }
-        target
-    }
-
     pub fn new(block: &Block) -> ProofOfWork {
         ProofOfWork{
             block,
-            target: ProofOfWork::generate_pof_border(),
+            target: (0..64).rev().map(|x| if x == TARGET_BYTE {'1'} else {'0'}).collect(),
         }
     }
 
@@ -53,8 +41,8 @@ impl<'a> ProofOfWork<'a> {
             hash = hasher.result_str();
 
             match hash.cmp(&self.target) {
-                Ordering::Greater => nonce += 1,
-                _ => break,
+                Ordering::Less => break,
+                _ => nonce += 1,
             }
 
             hasher.reset();

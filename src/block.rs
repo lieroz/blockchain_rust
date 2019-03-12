@@ -13,13 +13,11 @@ pub struct Block {
 
 impl Block {
     pub fn new(data: &str, prev_block_hash: &str) -> Block {
-        let timestamp = match SystemTime::now().duration_since(SystemTime::UNIX_EPOCH) {
-            Ok(n) => n.as_secs(),
-            Err(_) => panic!("SystemTime before UNIX EPOCH!"),
-        };
-
+        let timestamp = SystemTime::now()
+            .duration_since(SystemTime::UNIX_EPOCH)
+            .expect("SystemTime before UNIX EPOCH!");
         let mut block = Block{
-            timestamp,
+            timestamp: timestamp.as_secs(),
             data: data.to_string(),
             prev_block_hash: prev_block_hash.to_string(),
             hash: String::new(),

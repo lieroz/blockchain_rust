@@ -18,6 +18,7 @@ AesNiEncryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust
 AesNiEncryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^pub struct AesNiEncryptor {$/;"	s
 AesOps	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^trait AesOps {$/;"	i
 BI	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^static BI: [GePrecomp; 8] = [$/;"	v
+Batch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^pub trait Batch<K: Key> {$/;"	i
 Bcrypt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Bcrypt,$/;"	e	enum:KdfSpec
 Blake2b	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Blake2b,$/;"	e	enum:DigestSpec
 Blake2b	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^impl Blake2b {$/;"	c
@@ -74,6 +75,7 @@ Bs8State	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 BufferOverflow	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    BufferOverflow$/;"	e	enum:BufferResult
 BufferResult	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^pub enum BufferResult {$/;"	g
 BufferUnderflow	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    BufferUnderflow,$/;"	e	enum:BufferResult
+C	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^unsafe impl<C: Comparator> InternalComparator for C {}$/;"	c
 C0	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static C0: [u64; 256] = [$/;"	v
 C1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^static C1: [u32; 16] = [$/;"	v
 C1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static C1: [u64; 256] = [$/;"	v
@@ -87,6 +89,8 @@ C5	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.
 C6	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static C6: [u64; 256] = [$/;"	v
 C7	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^static C7: [u64; 256] = [$/;"	v
 CASES	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    static CASES: &'static [(&'static [u8], &'static [u8], &'static [u8], &'static [u8])] = &[$/;"	v	module:test
+Cache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^impl Cache {$/;"	c
+Cache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^pub struct Cache {$/;"	s
 Cbc	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Cbc,$/;"	e	enum:BlockModeSpec
 CbcDecryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <T: BlockDecryptor, X: PaddingProcessor> CbcDecryptor<T, X> {$/;"	c
 CbcDecryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <T: BlockDecryptor, X: PaddingProcessor> Decryptor for CbcDecryptor<T, X> {$/;"	c
@@ -113,6 +117,8 @@ ChaCha20Poly1305	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ru
 ChaCha20Poly1305	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^pub struct ChaCha20Poly1305 {$/;"	s
 ChaChaState	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^struct ChaChaState {$/;"	s
 CipherTest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    trait CipherTest {$/;"	i	module:test
+Compaction	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/compaction.rs	/^pub trait Compaction<'a, K: Key + 'a> {$/;"	i
+Comparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^pub trait Comparator {$/;"	i
 Ctr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Ctr,$/;"	e	enum:BlockModeSpec
 CtrMode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <A: BlockEncryptor> CtrMode<A> {$/;"	c
 CtrMode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <A: BlockEncryptor> Decryptor for CtrMode<A> {$/;"	c
@@ -130,12 +136,23 @@ CtrTest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 CurveGen	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    impl CurveGen {$/;"	c	module:tests
 CurveGen	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    impl Iterator for CurveGen {$/;"	c	module:tests
 CurveGen	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    struct CurveGen {$/;"	s	module:tests
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^impl<K: Key> Batch<K> for Database<K> {$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/compaction.rs	/^impl<'a, K: Key + 'a> Compaction<'a, K> for Database<K> {$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a, K: Key + 'a> Iterable<'a, K> for Database<K> {$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^impl<K: Key> KV<K> for Database<K> {$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^impl<K: Key> Database<K> {$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub struct Database<K: Key> {$/;"	s
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^unsafe impl<K: Key> Send for Database<K> {}$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^unsafe impl<K: Key> Sync for Database<K> {}$/;"	c
+Database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^impl<K: Key> Snapshots<K> for Database<K> {$/;"	c
 DecPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <X: PaddingProcessor> DecPadding<X> {$/;"	c
 DecPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl <X: PaddingProcessor> PaddingProcessor for DecPadding<X> {$/;"	c
 DecPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^pub struct DecPadding<X> {$/;"	s
 Decryption	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^    Decryption$/;"	e	enum:KeyType
 Decryption	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    Decryption$/;"	e	enum:KeyType
 Decryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/symmetriccipher.rs	/^pub trait Decryptor {$/;"	i
+DefaultComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^impl Comparator for DefaultComparator {$/;"	c
+DefaultComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^pub struct DefaultComparator;$/;"	s
 Des	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Des,$/;"	e	enum:SymmetricCipherSpec
 Digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/digest.rs	/^pub trait Digest {$/;"	i
 DigestSpec	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^enum DigestSpec {$/;"	g
@@ -168,6 +185,10 @@ Engine512	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 Engine512	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^struct Engine512 {$/;"	s
 Engine512State	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^impl Engine512State {$/;"	c
 Engine512State	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^struct Engine512State {$/;"	s
+Error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^impl Error {$/;"	c
+Error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^impl std::error::Error for Error {$/;"	c
+Error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^impl std::fmt::Display for Error {$/;"	c
+Error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^pub struct Error {$/;"	s
 Error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    Error(SymmetricCipherError)$/;"	e	enum:BlockEngineState
 FE_D	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^static FE_D : Fe = Fe([-10913610,13857413,-15372611,6949391,114729,-8787816,-6275908,-3247719,-1/;"	v
 FE_D2	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^static FE_D2 : Fe = Fe([-21827239,-5839606,-30745221,13898782,229458,15978800,-12551817,-6495438/;"	v
@@ -182,6 +203,7 @@ Fe	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.
 Fe	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^impl PartialEq for Fe {$/;"	c
 Fe	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^impl Sub for Fe {$/;"	c
 Fe	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^pub struct Fe(pub [i32; 10]);$/;"	s
+FilterPolicy	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/filter_policy.rs	/^pub trait FilterPolicy {$/;"	i
 Finished	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    Finished,$/;"	e	enum:BlockEngineState
 FixedBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub trait FixedBuffer {$/;"	i
 FixedBuffer128	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^impl Clone for FixedBuffer128 { fn clone(&self) -> FixedBuffer128 { *self } }$/;"	c
@@ -244,15 +266,34 @@ Hmac	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.
 Hmac	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^pub struct Hmac<D> {$/;"	s
 IV	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^static IV : [u64; 8] = [$/;"	v
 IV	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^static IV : [u32; 8] = [$/;"	v
+InternalComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^unsafe trait InternalComparator : Comparator where Self: Sized {$/;"	i
 InvalidLength	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/symmetriccipher.rs	/^    InvalidLength,$/;"	e	enum:SymmetricCipherError
 InvalidPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/symmetriccipher.rs	/^    InvalidPadding$/;"	e	enum:SymmetricCipherError
+Item	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^  type Item = (K,Vec<u8>);$/;"	t	implementation:Iterator
+Item	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^  type Item = K;$/;"	t	implementation:KeyIterator
+Item	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^  type Item = Vec<u8>;$/;"	t	implementation:ValueIterator
 Item	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^        type Item = Fe;$/;"	t	implementation:tests::CurveGen
 Item	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/step_by.rs	/^    type Item = T;$/;"	t
+Iterable	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^pub trait Iterable<'a, K: Key + 'a> {$/;"	i
+Iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a, K: Key> Iterator<'a, K> {$/;"	c
+Iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a, K: Key> LevelDBIterator<'a, K> for Iterator<'a,K> {$/;"	c
+Iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a,K: Key> iter::Iterator for Iterator<'a,K> {$/;"	c
+Iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^pub struct Iterator<'a, K: Key + 'a> {$/;"	s
+K	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    type K: Key;$/;"	t	interface:WritebatchIterator
+K	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    type K: Key;$/;"	t	interface:Comparator
+K	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^  type K = K;$/;"	t	implementation:OrdComparator
+K	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^  type K = i32;$/;"	t	implementation:DefaultComparator
+K	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/filter_policy.rs	/^    type K: Key;$/;"	t	interface:FilterPolicy
+KV	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^pub trait KV<K: Key> {$/;"	i
 KdfSpec	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^enum KdfSpec {$/;"	g
 Keccak224	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Keccak224,$/;"	e	enum:Sha3Mode
 Keccak256	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Keccak256,$/;"	e	enum:Sha3Mode
 Keccak384	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Keccak384,$/;"	e	enum:Sha3Mode
 Keccak512	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Keccak512,$/;"	e	enum:Sha3Mode
+KeyIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a, K: Key> iter::Iterator for KeyIterator<'a,K> {$/;"	c
+KeyIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a,K: Key> KeyIterator<'a,K> {$/;"	c
+KeyIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a,K: Key> LevelDBIterator<'a, K> for KeyIterator<'a,K> {$/;"	c
+KeyIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^pub struct KeyIterator<'a, K: Key + 'a> {$/;"	s
 KeySize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^pub enum KeySize {$/;"	g
 KeySize128	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^    KeySize128,$/;"	e	enum:KeySize
 KeySize192	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^    KeySize192,$/;"	e	enum:KeySize
@@ -262,6 +303,7 @@ KeyType	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 L	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^static L: [u8; 32] =$/;"	v
 LastInput	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    LastInput,$/;"	e	enum:BlockEngineState
 LastInput2	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    LastInput2,$/;"	e	enum:BlockEngineState
+LevelDBIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^pub trait LevelDBIterator<'a, K: Key> {$/;"	i
 Mac	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^pub trait Mac {$/;"	i
 MacResult	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^impl Eq for MacResult { }$/;"	c
 MacResult	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^impl MacResult {$/;"	c
@@ -279,6 +321,11 @@ NeedOutput	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cry
 NoPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    NoPadding,$/;"	e	enum:BlodeModePaddingSpec
 NoPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^impl PaddingProcessor for NoPadding {$/;"	c
 NoPadding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^pub struct NoPadding;$/;"	s
+Options	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^impl Options {$/;"	c
+Options	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub struct Options {$/;"	s
+OrdComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^impl<K: Key + Ord> Comparator for OrdComparator<K> {$/;"	c
+OrdComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^impl<K: Key + Ord> OrdComparator<K> {$/;"	c
+OrdComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^pub struct OrdComparator<K: Key + Ord> {$/;"	s
 Output	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    type Output = u32x4;$/;"	t	implementation:u32x4
 Output	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    type Output = Fe;$/;"	t	implementation:Fe
 Output	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    type Output = GeP1P1;$/;"	t	implementation:GeP3
@@ -308,6 +355,18 @@ RC	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.
 RCON	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^static RCON: [u32; 10] = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36];$/;"	v
 Range	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/step_by.rs	/^impl <T> RangeExt<T> for Range<T> where$/;"	c
 RangeExt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/step_by.rs	/^pub trait RangeExt<T> {$/;"	i
+RawCache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^impl Drop for RawCache {$/;"	c
+RawCache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^struct RawCache {$/;"	s
+RawComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^impl Drop for RawComparator {$/;"	c
+RawComparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^struct RawComparator {$/;"	s
+RawDB	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^impl Drop for RawDB {$/;"	c
+RawDB	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^struct RawDB {$/;"	s
+RawIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl Drop for RawIterator {$/;"	c
+RawIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^struct RawIterator {$/;"	s
+RawSnapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^impl Drop for RawSnapshot {$/;"	c
+RawSnapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^struct RawSnapshot {$/;"	s
+RawWritebatch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^impl Drop for RawWritebatch {$/;"	c
+RawWritebatch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^struct RawWritebatch {$/;"	s
 Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Rc4,$/;"	e	enum:SymmetricCipherSpec
 Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^impl Clone for Rc4 { fn clone(&self) -> Rc4 { *self } }$/;"	c
 Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^impl Decryptor for Rc4 {$/;"	c
@@ -316,6 +375,8 @@ Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^impl SynchronousStreamCipher for Rc4 {$/;"	c
 Rc4	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^pub struct Rc4 {$/;"	s
 ReadBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^pub trait ReadBuffer {$/;"	i
+ReadOptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^impl<'a, K: Key + 'a> ReadOptions<'a, K> {$/;"	c
+ReadOptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub struct ReadOptions<'a, K: Key + 'a> {$/;"	s
 RefReadBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^impl <'a> ReadBuffer for RefReadBuffer<'a> {$/;"	c
 RefReadBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^impl <'a> RefReadBuffer<'a> {$/;"	c
 RefReadBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^pub struct RefReadBuffer<'a> {$/;"	s
@@ -385,6 +446,10 @@ Sha512Trunc256	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust
 Shake128	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Shake128,$/;"	e	enum:Sha3Mode
 Shake256	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    Shake256,$/;"	e	enum:Sha3Mode
 SimdExt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/simd.rs	/^pub trait SimdExt {$/;"	i
+Snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^impl<'a, K: Key + 'a> Iterable<'a, K> for Snapshot<'a, K> {$/;"	c
+Snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^impl<'a, K: Key> Snapshot<'a, K> {$/;"	c
+Snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^pub struct Snapshot<'a, K: Key + 'a> {$/;"	s
+Snapshots	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^pub trait Snapshots<K: Key> {$/;"	i
 Sosemanuk	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Sosemanuk,$/;"	e	enum:SymmetricCipherSpec
 Sosemanuk	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^impl Clone for Sosemanuk { fn clone(&self) -> Sosemanuk { *self } }$/;"	c
 Sosemanuk	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^impl Decryptor for Sosemanuk {$/;"	c
@@ -423,12 +488,22 @@ TestVector	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cry
 TestVector	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^        struct TestVector {$/;"	s	function:test::test_chacha20_256_tls_vectors_96_nonce
 TestVector	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^  struct TestVector {$/;"	s	module:test
 TestVector	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hkdf.rs	/^    struct TestVector<D: Digest>{$/;"	s	module:test
+ValueIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a, K: Key> iter::Iterator for ValueIterator<'a,K> {$/;"	c
+ValueIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a,K: Key> LevelDBIterator<'a, K> for ValueIterator<'a,K> {$/;"	c
+ValueIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^impl<'a,K: Key> ValueIterator<'a,K> {$/;"	c
+ValueIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^pub struct ValueIterator<'a, K: Key + 'a> {$/;"	s
+Version	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/lib.rs	/^pub trait Version {$/;"	i
 Whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Whirlpool,$/;"	e	enum:DigestSpec
 Whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^impl Digest for Whirlpool {$/;"	c
 Whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^impl Whirlpool {$/;"	c
 Whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^pub struct Whirlpool {$/;"	s
 WriteBuffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^pub trait WriteBuffer {$/;"	i
 WriteExt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub trait WriteExt {$/;"	i
+WriteOptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^impl WriteOptions {$/;"	c
+WriteOptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub struct WriteOptions {$/;"	s
+Writebatch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^impl<K: Key> Writebatch<K> {$/;"	c
+Writebatch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^pub struct Writebatch<K: Key> {$/;"	s
+WritebatchIterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^pub trait WritebatchIterator {$/;"	i
 XSalsa20	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    XSalsa20,$/;"	e	enum:SymmetricCipherSpec
 a	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^  a: u32x4,$/;"	m	struct:ChaChaState
 a	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^  a: u32x4,$/;"	m	struct:SalsaState
@@ -450,6 +525,7 @@ add_random_event	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ru
 add_rotate_xor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^macro_rules! add_rotate_xor {$/;"	M
 add_round_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn add_round_key(self, rk: &Bs8State<T>) -> Bs8State<T> {$/;"	P	implementation:Bs8State
 add_round_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn add_round_key(self, rk: &Self) -> Self;$/;"	P	interface:AesOps
+advance	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn advance(&mut self) -> bool {$/;"	P	interface:LevelDBIterator
 advance_state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^    fn advance_state(&mut self) {$/;"	P	implementation:Sosemanuk
 aead	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod aead;$/;"	n
 aes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod aes;$/;"	n
@@ -496,6 +572,7 @@ apply_param	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cr
 b	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^  b: u32x4,$/;"	m	struct:ChaChaState
 b	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^  b: u32x4,$/;"	m	struct:SalsaState
 base_example	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn base_example() {$/;"	f	module:tests
+batch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod batch;$/;"	n
 bcrypt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt.rs	/^pub fn bcrypt(cost: u32, salt: &[u8], password: &[u8], output: &mut [u8]) {$/;"	f
 bcrypt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod bcrypt;$/;"	n
 bcrypt_16_5	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt.rs	/^    pub fn bcrypt_16_5(bh: & mut Bencher) {$/;"	f	module:bench
@@ -554,6 +631,8 @@ block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-c
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<CbcEncryptorProcessor<T>, X>$/;"	m	struct:CbcEncryptor
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<EcbDecryptorProcessor<T>, X>$/;"	m	struct:EcbDecryptor
 block_engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    block_engine: BlockEngine<EcbEncryptorProcessor<T>, X>$/;"	m	struct:EcbEncryptor
+block_restart_interval	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub block_restart_interval: Option<i32>,$/;"	m	struct:Options
+block_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub block_size: Option<size_t>,$/;"	m	struct:Options
 block_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^    fn block_size(&self) -> usize { 16 }$/;"	P	implementation:AesNiDecryptor
 block_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^    fn block_size(&self) -> usize { 16 }$/;"	P	implementation:AesNiEncryptor
 block_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    fn block_size(&self) -> usize { 8 * BLAKE2B_BLOCKBYTES }$/;"	P	implementation:Blake2b
@@ -615,6 +694,11 @@ c	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.3
 c	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/pbkdf2.rs	/^        c: u32,$/;"	m	struct:test::Test
 c	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^  c: u32x4,$/;"	m	struct:SalsaState
 c_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    c_len: usize,$/;"	m	struct:GhashWithC
+c_options	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub unsafe fn c_options(options: &Options,$/;"	f
+c_readoptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub unsafe fn c_readoptions<'a, K>(options: &ReadOptions<'a, K>) -> *mut leveldb_readoptions_t$/;"	f
+c_writeoptions	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^pub unsafe fn c_writeoptions(options: WriteOptions) -> *mut leveldb_writeoptions_t {$/;"	f
+cache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod cache;$/;"	n
+cache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub cache: Option<Cache>,$/;"	m	struct:Options
 calculate_block	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/pbkdf2.rs	/^fn calculate_block<M: Mac>($/;"	f
 can_absorb	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    can_absorb: bool,  \/\/ Can absorb$/;"	m	struct:Sha3
 can_squeeze	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    can_squeeze: bool,  \/\/ Can squeeze$/;"	m	struct:Sha3
@@ -626,6 +710,7 @@ capacity	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 capacity	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn capacity(&self) -> usize;$/;"	P	interface:ReadBuffer
 capacity	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn capacity(&self) -> usize;$/;"	P	interface:WriteBuffer
 capacity	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    fn capacity(&self) -> usize {$/;"	P	implementation:Sha3Mode
+cause	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    fn cause(&self) -> Option<&std::error::Error> {$/;"	P	implementation:Error
 cbc_decryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^pub fn cbc_decryptor<X: PaddingProcessor + Send + 'static>($/;"	f
 cbc_encryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^pub fn cbc_encryptor<X: PaddingProcessor + Send + 'static>($/;"	f
 chacha20	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod chacha20;$/;"	n
@@ -652,6 +737,7 @@ cipher_text	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cr
 cipher_text	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^    cipher_text: Vec<u8>,$/;"	m	struct:test::TestVector
 ciphertext	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blowfish.rs	/^        ciphertext: Vec<u8>$/;"	m	struct:test::Test
 circular_shift	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ripemd160.rs	/^fn circular_shift(bits: u32, word: u32) -> u32 {$/;"	f
+clear	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    pub fn clear(&mut self) {$/;"	P	implementation:Writebatch
 clone	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^impl Clone for AesNiDecryptor { fn clone(&self) -> AesNiDecryptor { *self } }$/;"	P	implementation:AesNiDecryptor
 clone	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^impl Clone for AesNiEncryptor { fn clone(&self) -> AesNiEncryptor { *self } }$/;"	P	implementation:AesNiEncryptor
 clone	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^impl Clone for Blake2b { fn clone(&self) -> Blake2b { *self } }$/;"	P	implementation:Blake2b
@@ -670,8 +756,18 @@ cnt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 code	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^    code: Vec<u8>$/;"	m	struct:MacResult
 code	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^    pub fn code<'s>(&'s self) -> &'s [u8] {$/;"	P	implementation:MacResult
 columnround	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^fn columnround(state: &mut SalsaState) -> () {$/;"	f
+compact	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/compaction.rs	/^    fn compact(&self, start: &'a K, limit: &'a K) {$/;"	P	implementation:Database
+compact	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/compaction.rs	/^    fn compact(&self, start: &'a K, limit: &'a K);$/;"	P	interface:Compaction
+compaction	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod compaction;$/;"	n
+comparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    comparator: Option<RawComparator>,$/;"	m	struct:Database
+comparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod comparator;$/;"	n
+compare	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    extern "C" fn compare(state: *mut c_void,$/;"	P	interface:InternalComparator
+compare	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn compare(&self, _a: &i32, _b: &i32) -> Ordering {$/;"	P	implementation:DefaultComparator
+compare	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn compare(&self, a: &K, b: &K) -> Ordering {$/;"	P	implementation:OrdComparator
+compare	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn compare(&self, a: &Self::K, b: &Self::K) -> Ordering;$/;"	P	interface:Comparator
 compress	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    fn compress(&mut self) {$/;"	P	implementation:Blake2b
 compress	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    fn compress(&mut self) {$/;"	P	implementation:Blake2s
+compression	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub compression: Compression,$/;"	m	struct:Options
 computed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    computed: bool, \/\/ whether the final digest has been computed$/;"	m	struct:Blake2b
 computed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    computed: bool, \/\/ whether the final digest has been computed$/;"	m	struct:Blake2s
 computed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ripemd160.rs	/^    computed: bool,$/;"	m	struct:Ripemd160
@@ -682,6 +778,9 @@ construct_ctr_x8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ru
 copy_memory	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub fn copy_memory(src: &[u8], dst: &mut [u8]) {$/;"	f
 cost	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt.rs	/^        cost: u32,$/;"	m	struct:test::Test
 count	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    count: usize$/;"	m	struct:Pool
+create_comparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^pub fn create_comparator<T: Comparator>(x: Box<T>) -> *mut leveldb_comparator_t {$/;"	f
+create_filter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/filter_policy.rs	/^    fn create_filter(&self, key_array: &[Self::K], num_keys: i64, filter_length: i64) -> ;$/;"	P	interface:FilterPolicy
+create_if_missing	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub create_if_missing: bool,$/;"	m	struct:Options
 create_keys	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^fn create_keys<D: Digest>(digest: &mut D, key: &[u8]) -> (Vec<u8>, Vec<u8>) {$/;"	f
 cryptoutil	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^mod cryptoutil;$/;"	n
 ctr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        ctr: Vec<u8>,$/;"	m	struct:test::CtrTest
@@ -702,6 +801,13 @@ data	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.
 data	/home/lieroz/blockchain_rust/src/block.rs	/^    data: String,$/;"	m	struct:Block
 data	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn data(&self) -> &str {$/;"	P	implementation:Block
 data_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^    data_len: usize$/;"	m	struct:ChaCha20Poly1305
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    database: PhantomData<&'a Database<K>>,$/;"	m	struct:Iterator
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    database: PhantomData<&'a Database<K>>,$/;"	m	struct:KeyIterator
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    database: PhantomData<&'a Database<K>>,$/;"	m	struct:ValueIterator
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    database: RawDB,$/;"	m	struct:Database
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    database: &'a Database<K>,$/;"	m	struct:Snapshot
+database	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/lib.rs	/^pub mod database;$/;"	n
+db_ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    db_ptr: *mut leveldb_t,$/;"	m	struct:RawSnapshot
 dbl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn dbl(&self) -> GeP1P1 {$/;"	P	implementation:GeP2
 dbl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn dbl(&self) -> GeP1P1 {$/;"	P	implementation:GeP3
 deconstruct	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn deconstruct(bs: &Bs8State<u16>, bit: u32) -> u32 {$/;"	f	function:un_bit_slice_4x4_with_u16
@@ -738,9 +844,17 @@ define_aes_impl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rus
 define_aes_impl_x8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^macro_rules! define_aes_impl_x8($/;"	M
 define_aes_struct	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^macro_rules! define_aes_struct($/;"	M
 define_aes_struct_x8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^macro_rules! define_aes_struct_x8($/;"	M
+delete	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    pub fn delete(&mut self, key: K) {$/;"	P	implementation:Writebatch
+delete	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn delete<BK: Borrow<K>>(&self, options: WriteOptions, key: BK) -> Result<(), Error> {$/;"	P	implementation:Database
+delete	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn delete<BK: Borrow<K>>(&self, options: WriteOptions, key: BK) -> Result<(), Error>;$/;"	P	interface:KV
+deleted	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    fn deleted(&mut self, key: Self::K);$/;"	P	interface:WritebatchIterator
+deleted_callback	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^extern "C" fn deleted_callback<K: Key, T: WritebatchIterator<K = K>>(state: *mut c_void,$/;"	f
 depth	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    depth: u8,$/;"	m	struct:Blake2bParam
 depth	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    depth: u8,$/;"	m	struct:Blake2sParam
 derive_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^fn derive_key(key: &mut [u8], mask: u8) {$/;"	f
+description	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    fn description(&self) -> &str {$/;"	P	implementation:Error
+destroy	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/management.rs	/^pub fn destroy(name: &Path, options: Options) -> Result<(), Error> {$/;"	f
+destructor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    extern "C" fn destructor(state: *mut c_void) {$/;"	P	interface:InternalComparator
 digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hkdf.rs	/^        digest: D,$/;"	m	struct:test::TestVector
 digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^    digest: D,$/;"	m	struct:Hmac
 digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod digest;$/;"	n
@@ -753,6 +867,12 @@ digest_tests	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-c
 digest_tests	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^mod digest_tests {$/;"	n
 donna_self_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    fn donna_self_test() {$/;"	f	module:test
 double_scalarmult_vartime	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn double_scalarmult_vartime(a_scalar: &[u8], a_point: GeP3, b_scalar: &[u8]) -> GeP2 {$/;"	P	implementation:GeP2
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawWritebatch
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawCache
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawIterator
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawComparator
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawDB
+drop	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn drop(&mut self) {$/;"	P	implementation:RawSnapshot
 eay_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blowfish.rs	/^    fn eay_test_vectors() -> Vec<Test> {$/;"	f	module:test
 ecb_decryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^pub fn ecb_decryptor<X: PaddingProcessor + Send + 'static>($/;"	f
 ecb_encryptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^pub fn ecb_encryptor<X: PaddingProcessor + Send + 'static>($/;"	f
@@ -791,6 +911,8 @@ engine	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-
 eq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn eq(&self, other: &Fe) -> bool {$/;"	P	implementation:Fe
 eq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^    fn eq(&self, x: &MacResult) -> bool {$/;"	P	implementation:MacResult
 equal	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn equal(b: u8, c: u8) -> i32 {$/;"	f
+error	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod error;$/;"	n
+error_if_exists	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub error_if_exists: bool,$/;"	m	struct:Options
 exchange	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^pub fn exchange(public_key: &[u8], private_key: &[u8]) -> [u8; 32] {$/;"	f
 expand	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    fn expand(key: &[u8], nonce: &[u8]) -> ChaChaState {$/;"	P	implementation:ChaCha20
 expand	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^    fn expand(key: &[u8], nonce: &[u8]) -> SalsaState {$/;"	P	implementation:Salsa20
@@ -810,6 +932,7 @@ fanout	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-
 fast_mode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn fast_mode<R: ReadBuffer, W: WriteBuffer>($/;"	P	implementation:BlockEngine
 ffmulx	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^fn ffmulx(x: u32) -> u32 {$/;"	f
 fill_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn fill_bytes(&mut self, dest: &mut [u8]) {$/;"	P	implementation:Fortuna
+fill_cache	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub fill_cache: bool,$/;"	m	struct:ReadOptions
 finalize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    fn finalize( &mut self, out: &mut [u8] ) {$/;"	P	implementation:Blake2b
 finalize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    fn finalize( &mut self, out: &mut [u8] ) {$/;"	P	implementation:Blake2s
 finalize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    fn finalize(&mut self) {$/;"	P	implementation:Sha3
@@ -827,14 +950,26 @@ finished	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 finished	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha2.rs	/^    finished: bool,$/;"	m	struct:Engine512
 fixed_time_eq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/util.rs	/^pub fn fixed_time_eq(lhs: &[u8], rhs: &[u8]) -> bool {$/;"	f
 flush	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn flush(&mut self) {$/;"	P	implementation:Ghash
+fmt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {$/;"	P	implementation:Error
 fortuna	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod fortuna;$/;"	n
 fortuna_new_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    pub fn fortuna_new_1k(bh: &mut Bencher) {$/;"	f	module:bench
 fortuna_new_32	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    pub fn fortuna_new_32(bh: &mut Bencher) {$/;"	f	module:bench
 fortuna_new_64	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    pub fn fortuna_new_64(bh: &mut Bencher) {$/;"	f	module:bench
 fortuna_new_64k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    pub fn fortuna_new_64k(bh: &mut Bencher) {$/;"	f	module:bench
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from(mut self, key: &'a K) -> Self {$/;"	P	implementation:Iterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from(mut self, key: &'a K) -> Self {$/;"	P	implementation:KeyIterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from(mut self, key: &'a K) -> Self {$/;"	P	implementation:ValueIterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from(self, key: &'a K) -> Self;$/;"	P	interface:LevelDBIterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    from: Option<&'a K>,$/;"	m	struct:Iterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    from: Option<&'a K>,$/;"	m	struct:KeyIterator
+from	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    from: Option<&'a K>,$/;"	m	struct:ValueIterator
 from_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn from_bytes(s: &[u8]) -> Fe {$/;"	P	implementation:Fe
 from_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn from_bytes(bytes: &[u8]) -> Gf128 {$/;"	P	implementation:Gf128
 from_bytes_negate_vartime	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn from_bytes_negate_vartime(s: &[u8]) -> Option<GeP3> {$/;"	P	implementation:GeP3
+from_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from_key(&self) -> Option<&K> {$/;"	P	implementation:Iterator
+from_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from_key(&self) -> Option<&K> {$/;"	P	implementation:KeyIterator
+from_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from_key(&self) -> Option<&K> {$/;"	P	implementation:ValueIterator
+from_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn from_key(&self) -> Option<&K>;$/;"	P	interface:LevelDBIterator
 from_seed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn from_seed(seed: &'a [u8]) -> Fortuna {$/;"	P	implementation:Fortuna
 from_to_bytes_preserves	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn from_to_bytes_preserves() {$/;"	f	module:tests
 fsm_r	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^    fsm_r: [u32; 2],$/;"	m	struct:Sosemanuk
@@ -842,9 +977,11 @@ full_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cr
 g	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^        fn g(u: u32, v: u32, w: u32) -> u32 {$/;"	f	method:Md5State::process_block
 ge_scalarmult_base	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^pub fn ge_scalarmult_base(a: &[u8]) -> GeP3 {$/;"	f
 generate_blocks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn generate_blocks(&mut self, k: usize, out: &mut [u8]) {$/;"	P	implementation:FortunaGenerator
-generate_pof_border	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    fn generate_pof_border() -> String {$/;"	P	implementation:ProofOfWork
 generate_random_data	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn generate_random_data(&mut self, out: &mut [u8]) {$/;"	P	implementation:FortunaGenerator
 generator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    generator: FortunaGenerator,$/;"	m	struct:Fortuna
+get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn get<'a, BK: Borrow<K>>(&self, options: ReadOptions<'a, K>, key: BK) -> Result<Option<Vec</;"	P	implementation:Database
+get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn get<'a, BK: Borrow<K>>(&self, options: ReadOptions<'a, K>, key: BK) -> Result<Option<Vec</;"	P	interface:KV
+get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    pub fn get<BK: Borrow<K>>(&'a self,$/;"	P	implementation:Snapshot
 get_cipher	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn get_cipher<'a>(&'a self) -> &'a [u8] {$/;"	P	implementation:test::CbcTest
 get_cipher	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn get_cipher<'a>(&'a self) -> &'a [u8] {$/;"	P	implementation:test::CtrTest
 get_cipher	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn get_cipher<'a>(&'a self) -> &'a [u8] {$/;"	P	implementation:test::EcbTest
@@ -987,6 +1124,14 @@ is_keccak	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 is_negative	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn is_negative(&self) -> bool {$/;"	P	implementation:Fe
 is_nonzero	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn is_nonzero(&self) -> bool {$/;"	P	implementation:Fe
 is_shake	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    pub fn is_shake(&self) -> bool {$/;"	P	implementation:Sha3Mode
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn iter(&'a self, options: ReadOptions<'a, K>) -> Iterator<K> {$/;"	P	implementation:Database
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn iter(&'a self, options: ReadOptions<'a, K>) -> Iterator<K>;$/;"	P	interface:Iterable
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    iter: RawIterator,$/;"	m	struct:Iterator
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    iter: RawIterator,$/;"	m	struct:KeyIterator
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    iter: RawIterator,$/;"	m	struct:ValueIterator
+iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn iter(&'a self, mut options: ReadOptions<'a, K>) -> Iterator<K> {$/;"	P	implementation:Snapshot
+iterate	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    pub fn iterate<T: WritebatchIterator<K = K>>(&mut self, iterator: Box<T>) -> Box<T> {$/;"	P	implementation:Writebatch
+iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod iterator;$/;"	n
 iv	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^                iv:  Vec<u8>,$/;"	m	struct:test::TestVector
 iv	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        iv: Vec<u8>,$/;"	m	struct:test::CbcTest
 j	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^    j: u8,$/;"	m	struct:Rc4
@@ -997,6 +1142,7 @@ keccak256	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 keccak384	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    pub fn keccak384() -> Sha3 {$/;"	P	implementation:Sha3
 keccak512	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    pub fn keccak512() -> Sha3 {$/;"	P	implementation:Sha3
 keccak_f	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^fn keccak_f(state: &mut [u8]) {$/;"	f
+key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn key(&self) -> K {$/;"	P	interface:LevelDBIterator
 key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        key: Vec<u8>,$/;"	m	struct:test::CtrTest
 key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        key: Vec<u8>,$/;"	m	struct:test::Test
 key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^                key:  Vec<u8>,$/;"	m	struct:test::TestVector
@@ -1018,11 +1164,19 @@ key_length	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cry
 key_length	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    key_length: u8,$/;"	m	struct:Blake2bParam
 key_length	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    key_length: u8,$/;"	m	struct:Blake2s
 key_length	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    key_length: u8,$/;"	m	struct:Blake2sParam
+key_may_match	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/filter_policy.rs	/^    fn key_may_match(&self, key: &Self::K) -> bool;$/;"	P	interface:FilterPolicy
 keypair_cases	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^    fn keypair_cases() {$/;"	f	module:tests
 keypair_matches_mont	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^    fn keypair_matches_mont() {$/;"	f	module:tests
+keys_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn keys_iter(&'a self, options: ReadOptions<'a, K>) -> KeyIterator<K> {$/;"	P	implementation:Database
+keys_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn keys_iter(&'a self, options: ReadOptions<'a, K>) -> KeyIterator<K>;$/;"	P	interface:Iterable
+keys_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn keys_iter(&'a self, mut options: ReadOptions<'a, K>) -> KeyIterator<K> {$/;"	P	implementation:Snapshot
 keystream	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            keystream: Vec<u8>,$/;"	m	struct:test::test_chacha20_256_tls_vectors::TestVector
 keystream	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            keystream: Vec<u8>,$/;"	m	struct:test::test_chacha20_256_tls_vectors_96_nonce::TestVector
+kv	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod kv;$/;"	n
 l	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hkdf.rs	/^        l: usize,$/;"	m	struct:test::TestVector
+last	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    pub fn last(self) -> Option<(K, Vec<u8>)> {$/;"	P	implementation:Iterator
+last	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    pub fn last(self) -> Option<K> {$/;"	P	implementation:KeyIterator
+last	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    pub fn last(self) -> Option<Vec<u8>> {$/;"	P	implementation:ValueIterator
 last_node	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    last_node: u8,$/;"	m	struct:Blake2b
 last_node	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    last_node: u8,$/;"	m	struct:Blake2s
 last_reseed_time	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    last_reseed_time: f64$/;"	m	struct:Fortuna
@@ -1052,6 +1206,12 @@ mac	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 mac_tests	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^mod mac_tests {$/;"	n
 mac_tests	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^mod mac_tests {$/;"	n
 main	/home/lieroz/blockchain_rust/src/main.rs	/^fn main() {$/;"	f
+major	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/lib.rs	/^    fn major() -> isize {$/;"	P	interface:Version
+management	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod management;$/;"	n
+marker	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    marker: PhantomData<K>,$/;"	m	struct:Writebatch
+marker	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    marker: PhantomData<K>,$/;"	m	struct:OrdComparator
+marker	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    marker: PhantomData<K>,$/;"	m	struct:Database
+max_open_files	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub max_open_files: Option<i32>,$/;"	m	struct:Options
 maybe_set	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn maybe_set(&mut self, other: &Fe, do_swap: i32) {$/;"	P	implementation:Fe
 maybe_set	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn maybe_set(&mut self, other: &GePrecomp, do_swap: i32) {$/;"	P	implementation:GePrecomp
 maybe_swap_with	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn maybe_swap_with(&mut self, other: &mut Fe, do_swap: i32) {$/;"	P	implementation:Fe
@@ -1059,6 +1219,8 @@ md5	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 md5_10	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^    pub fn md5_10(bh: & mut Bencher) {$/;"	f	module:bench
 md5_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^    pub fn md5_1k(bh: & mut Bencher) {$/;"	f	module:bench
 md5_64k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^    pub fn md5_64k(bh: & mut Bencher) {$/;"	f	module:bench
+message	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    message: String,$/;"	m	struct:Error
+minor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/lib.rs	/^    fn minor() -> isize {$/;"	P	interface:Version
 mix_columns	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn mix_columns(self) -> Bs8State<T> {$/;"	P	implementation:Bs8State
 mix_columns	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn mix_columns(self) -> Self;$/;"	P	interface:AesOps
 mk_result	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha1.rs	/^fn mk_result(st: &mut Sha1, rs: &mut [u8]) {$/;"	f
@@ -1071,7 +1233,24 @@ mul	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 mul_121666	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn mul_121666(&self) -> Fe {$/;"	P	implementation:Fe
 mul_assoc	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn mul_assoc() {$/;"	f	module:tests
 mul_commutes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn mul_commutes() {$/;"	f	module:tests
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    extern "C" fn name(state: *mut c_void) -> *const c_char {$/;"	P	interface:InternalComparator
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn name(&self) -> *const c_char {$/;"	P	implementation:DefaultComparator
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn name(&self) -> *const c_char {$/;"	P	implementation:OrdComparator
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn name(&self) -> *const c_char;$/;"	P	interface:Comparator
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    name: String,$/;"	m	struct:OrdComparator
+name	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/filter_policy.rs	/^    fn name(&self) -> *const c_char;$/;"	P	interface:FilterPolicy
 neg	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn neg(&self) -> Fe {$/;"	P	implementation:Fe
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    pub fn new() -> Writebatch<K> {$/;"	P	implementation:Writebatch
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^    pub fn new(size: size_t) -> Cache {$/;"	P	implementation:Cache
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    pub fn new(name: &str) -> OrdComparator<K> {$/;"	P	implementation:OrdComparator
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    pub fn new(message: String) -> Error {$/;"	P	implementation:Error
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn new(database: &'a Database<K>, options: ReadOptions<'a, K>) -> Iterator<'a, K> {$/;"	P	implementation:Iterator
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn new(database: &'a Database<K>, options: ReadOptions<'a, K>) -> KeyIterator<'a, K> {$/;"	P	implementation:KeyIterator
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn new(database: &'a Database<K>, options: ReadOptions<'a, K>) -> ValueIterator<'a, K> {$/;"	P	implementation:ValueIterator
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    fn new(database: *mut leveldb_t,$/;"	P	implementation:Database
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub fn new() -> Options {$/;"	P	implementation:Options
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub fn new() -> ReadOptions<'a, K> {$/;"	P	implementation:ReadOptions
+new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub fn new() -> WriteOptions {$/;"	P	implementation:WriteOptions
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^    pub fn new (key_size: KeySize, key: &[u8], nonce: &[u8], aad: &[u8]) -> AesGcm<'a> {$/;"	P	implementation:AesGcm
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^    pub fn new(key_size: KeySize, key: &[u8]) -> AesNiDecryptor {$/;"	P	implementation:AesNiDecryptor
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^    pub fn new(key_size: KeySize, key: &[u8]) -> AesNiEncryptor {$/;"	P	implementation:AesNiEncryptor
@@ -1122,6 +1301,7 @@ new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 new	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new(data: &str, prev_block_hash: &str) -> Block {$/;"	P	implementation:Block
 new	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn new() -> Blockchain {$/;"	P	implementation:Blockchain
 new	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn new(block: &Block) -> ProofOfWork {$/;"	P	implementation:ProofOfWork
+new_from_i8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/error.rs	/^    pub fn new_from_i8(message: *const i8) -> Error {$/;"	P	implementation:Error
 new_from_owned	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/mac.rs	/^    pub fn new_from_owned(code: Vec<u8>) -> MacResult {$/;"	P	implementation:MacResult
 new_genesis_block	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new_genesis_block() -> Block {$/;"	P	implementation:Block
 new_keyed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    pub fn new_keyed(outlen: usize, key: &[u8] ) -> Blake2b {$/;"	P	implementation:Blake2b
@@ -1131,6 +1311,9 @@ new_with_history	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ru
 new_with_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    pub fn new_with_len<'a>(buff: Vec<u8>, len: usize) -> OwnedReadBuffer {$/;"	P	implementation:OwnedReadBuffer
 new_xchacha20	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    pub fn new_xchacha20(key: &[u8], nonce: &[u8]) -> ChaCha20 {$/;"	P	implementation:ChaCha20
 new_xsalsa20	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^    pub fn new_xsalsa20(key: &[u8], nonce: &[u8]) -> Salsa20 {$/;"	P	implementation:Salsa20
+next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn next(&mut self) -> Option<(K, Vec<u8>)> {$/;"	P	implementation:Iterator
+next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn next(&mut self) -> Option<K> {$/;"	P	implementation:KeyIterator
+next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn next(&mut self) -> Option<Vec<u8>> {$/;"	P	implementation:ValueIterator
 next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn next<'s>(&'s mut self, len: usize) -> &'s mut [u8];$/;"	P	interface:FixedBuffer
 next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^        fn next(&mut self) -> Option<Fe> {$/;"	P	implementation:tests::CurveGen
 next	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    fn next(&mut self) -> u8 {$/;"	P	implementation:Hc128
@@ -1150,6 +1333,8 @@ nonce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0
 nonce	/home/lieroz/blockchain_rust/src/block.rs	/^    nonce: u64,$/;"	m	struct:Block
 nonce	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn nonce(&self) -> u64 {$/;"	P	implementation:Block
 not	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn not(self) -> u32x4 {$/;"	P	implementation:u32x4
+null	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn null() -> bool {$/;"	P	implementation:DefaultComparator
+null	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/comparator.rs	/^    fn null() -> bool {$/;"	P	interface:Comparator
 o_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^    o_key: Vec<u8>,$/;"	m	struct:Hmac
 offset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    offset : usize,$/;"	m	struct:ChaCha20
 offset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/salsa20.rs	/^    offset: usize,$/;"	m	struct:Salsa20
@@ -1160,7 +1345,11 @@ op_f	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.
 op_g	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^        fn op_g(w: u32, x: u32, y: u32, z: u32, m: u32, s: u32) -> u32 {$/;"	f	method:Md5State::process_block
 op_h	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^        fn op_h(w: u32, x: u32, y: u32, z: u32, m: u32, s: u32) -> u32 {$/;"	f	method:Md5State::process_block
 op_i	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/md5.rs	/^        fn op_i(w: u32, x: u32, y: u32, z: u32, m: u32, s: u32) -> u32 {$/;"	f	method:Md5State::process_block
+open	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    pub fn open(name: &Path, options: Options) -> Result<Database<K>, Error> {$/;"	P	implementation:Database
+open_with_comparator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    pub fn open_with_comparator<C: Comparator<K = K>>(name: &Path,$/;"	P	implementation:Database
 openwall_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt.rs	/^    fn openwall_test_vectors() -> Vec<Test> {$/;"	f	module:test
+options	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    options: Options,$/;"	m	struct:Database
+options	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod options;$/;"	n
 out	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt_pbkdf.rs	/^            out:   [u8; 32],$/;"	m	struct:test::test_bcrypt_hash::Test
 out	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt_pbkdf.rs	/^            out: Vec<u8>,$/;"	m	struct:test::test_openbsd_vectors::Test
 out_hist	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    out_hist: Vec<u8>,$/;"	m	struct:BlockEngine
@@ -1219,6 +1408,7 @@ padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    padding: X,$/;"	m	struct:BlockEngine
 param	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    param: Blake2bParam$/;"	m	struct:Blake2b
 param	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    param: Blake2sParam$/;"	m	struct:Blake2s
+paranoid_checks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub paranoid_checks: bool,$/;"	m	struct:Options
 parent	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    parent: &'a mut OwnedReadBuffer,$/;"	m	struct:BorrowedWriteBuffer
 password	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt_pbkdf.rs	/^            password: Vec<u8>,$/;"	m	struct:test::test_openbsd_vectors::Test
 password	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/pbkdf2.rs	/^        password: Vec<u8>,$/;"	m	struct:test::Test
@@ -1290,12 +1480,31 @@ process_block	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-
 process_scratch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^        fn process_scratch<P: BlockProcessor, X: PaddingProcessor>(me: &mut BlockEngine<P, X>) {$/;"	f	method:BlockEngine::process
 processor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    processor: P,$/;"	m	struct:BlockEngine
 proofofwork	/home/lieroz/blockchain_rust/src/main.rs	/^mod proofofwork;$/;"	n
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    ptr: *mut leveldb_writebatch_t,$/;"	m	struct:RawWritebatch
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^    ptr: *mut leveldb_cache_t,$/;"	m	struct:RawCache
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    ptr: *mut leveldb_iterator_t,$/;"	m	struct:RawIterator
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    ptr: *mut leveldb_comparator_t,$/;"	m	struct:RawComparator
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^    ptr: *mut leveldb_t,$/;"	m	struct:RawDB
+ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    ptr: *mut leveldb_snapshot_t,$/;"	m	struct:RawSnapshot
 push_to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn push_to<W: WriteBuffer>(&mut self, output: &mut W) {$/;"	P	interface:ReadBuffer
+put	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    fn put(&mut self, key: Self::K, value: &[u8]);$/;"	P	interface:WritebatchIterator
+put	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    pub fn put(&mut self, key: K, value: &[u8]) {$/;"	P	implementation:Writebatch
+put	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn put<BK: Borrow<K>>(&self, options: WriteOptions, key: BK, value: &[u8]) -> Result<(), Err/;"	P	implementation:Database
+put	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/kv.rs	/^    fn put<BK: Borrow<K>>(&self, options: WriteOptions, key: BK, value: &[u8]) -> Result<(), Err/;"	P	interface:KV
+put_callback	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^extern "C" fn put_callback<K: Key, T: WritebatchIterator<K = K>>(state: *mut c_void,$/;"	f
 q	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    q: [u32; 512],$/;"	m	struct:Hc128
 r	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    r         : [u32; 5],$/;"	m	struct:Poly1305
 r	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/scrypt.rs	/^        r: u32,$/;"	m	struct:test::Test
 r	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/scrypt.rs	/^    r: u32,$/;"	m	struct:ScryptParams
 rate	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^    fn rate(&self) -> usize {$/;"	P	implementation:Sha3
+raw	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^    raw: RawCache,$/;"	m	struct:Cache
+raw	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    raw: RawSnapshot,$/;"	m	struct:Snapshot
+raw_iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn raw_iterator(&self) -> *mut leveldb_iterator_t {$/;"	P	implementation:Iterator
+raw_iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn raw_iterator(&self) -> *mut leveldb_iterator_t {$/;"	P	implementation:KeyIterator
+raw_iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn raw_iterator(&self) -> *mut leveldb_iterator_t {$/;"	P	implementation:ValueIterator
+raw_iterator	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn raw_iterator(&self) -> *mut leveldb_iterator_t;$/;"	P	interface:LevelDBIterator
+raw_ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/cache.rs	/^    pub fn raw_ptr(&self) -> *mut leveldb_cache_t {$/;"	P	implementation:Cache
+raw_ptr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    pub fn raw_ptr(&self) -> *mut leveldb_snapshot_t {$/;"	P	implementation:Snapshot
 raw_result	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    fn raw_result(&mut self, output: &mut [u8]) {$/;"	P	implementation:Blake2b
 raw_result	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    fn raw_result(&mut self, output: &mut [u8]) {$/;"	P	implementation:Blake2s
 raw_result	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn raw_result(&mut self, output: &mut [u8]) {$/;"	P	implementation:Ghash
@@ -1321,6 +1530,7 @@ remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn remaining(&self) -> usize;$/;"	P	interface:ReadBuffer
 remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn remaining(&self) -> usize;$/;"	P	interface:WriteBuffer
 remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn remaining(&self) -> usize;$/;"	P	interface:FixedBuffer
+repair	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/management.rs	/^pub fn repair(name: &Path, options: Options) -> Result<(), Error> {$/;"	f
 reseed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn reseed(&mut self, s: &[u8]) {$/;"	P	implementation:FortunaGenerator
 reseed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    fn reseed(&mut self, seed: &'a [u8]) {$/;"	P	implementation:Fortuna
 reseed_count	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    reseed_count: u32,$/;"	m	struct:Fortuna
@@ -1476,6 +1686,9 @@ scrypt_check	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-c
 scrypt_ro_mix	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/scrypt.rs	/^fn scrypt_ro_mix(b: &mut [u8], v: &mut [u8], t: &mut [u8], n: usize) {$/;"	f
 scrypt_simple	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/scrypt.rs	/^pub fn scrypt_simple(password: &str, params: &ScryptParams) -> io::Result<String> {$/;"	f
 secure_memset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/util.rs	/^pub fn secure_memset(dst: &mut [u8], val: u8) {$/;"	f
+seek	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn seek(&self, key: &K) {$/;"	P	interface:LevelDBIterator
+seek_to_first	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn seek_to_first(&self) {$/;"	P	interface:LevelDBIterator
+seek_to_last	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn seek_to_last(&self) {$/;"	P	interface:LevelDBIterator
 select	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn select(pos: usize, b: i8) -> GePrecomp {$/;"	P	implementation:GePrecomp
 set_domain_sep	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^        fn set_domain_sep(out_len: usize, buf: &mut [u8]) {$/;"	f	method:Sha3::finalize
 set_lastblock	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    fn set_lastblock(&mut self) {$/;"	P	implementation:Blake2b
@@ -1548,6 +1761,10 @@ simd_eq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^fn size(rounds: u8) -> usize { 16 * ((rounds as usize) + 1) }$/;"	f
 size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn size(&self) -> usize;$/;"	P	interface:FixedBuffer
 slide	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn slide(a: &[u8]) -> [i8; 256] {$/;"	P	implementation:GeP2
+snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub snapshot: Option<&'a Snapshot<'a, K>>,$/;"	m	struct:ReadOptions
+snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn snapshot<'a>(&'a self) -> Snapshot<'a, K> {$/;"	P	implementation:Database
+snapshot	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn snapshot<'a>(&'a self) -> Snapshot<'a, K>;$/;"	P	interface:Snapshots
+snapshots	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/mod.rs	/^pub mod snapshots;$/;"	n
 sosemanuk	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod sosemanuk;$/;"	n
 sosemanuk_10	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^    pub fn sosemanuk_10(bh: & mut Bencher) {$/;"	f	module:bench
 sosemanuk_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sosemanuk.rs	/^    pub fn sosemanuk_1k(bh: & mut Bencher) {$/;"	f	module:bench
@@ -1566,6 +1783,17 @@ square_and_double	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/r
 square_by_mul	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn square_by_mul() {$/;"	f	module:tests
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, func: F);$/;"	P	interface:StandardPadding
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, mut func: F) {$/;"	P	implementation:T
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn start(&self) -> bool {$/;"	P	implementation:Iterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn start(&self) -> bool {$/;"	P	implementation:KeyIterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn start(&self) -> bool {$/;"	P	implementation:ValueIterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn start(&self) -> bool;$/;"	P	interface:LevelDBIterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    start: bool,$/;"	m	struct:Iterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    start: bool,$/;"	m	struct:KeyIterator
+start	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    start: bool,$/;"	m	struct:ValueIterator
+started	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn started(&mut self) {$/;"	P	implementation:Iterator
+started	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn started(&mut self) {$/;"	P	implementation:KeyIterator
+started	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn started(&mut self) {$/;"	P	implementation:ValueIterator
+started	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn started(&mut self);$/;"	P	interface:LevelDBIterator
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    state: BlockEngineState$/;"	m	struct:BlockEngine
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    state  : ChaChaState,$/;"	m	struct:ChaCha20
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/fortuna.rs	/^    state: Sha256,$/;"	m	struct:Pool
@@ -1603,6 +1831,7 @@ swap_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 swizzle	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^macro_rules! swizzle{$/;"	M
 symm_enc_or_dec	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub fn symm_enc_or_dec<S: SynchronousStreamCipher, R: ReadBuffer, W: WriteBuffer>($/;"	f
 symmetriccipher	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod symmetriccipher;$/;"	n
+sync	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub sync: bool,$/;"	m	struct:WriteOptions
 t	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    t: [u64; 2],$/;"	m	struct:Blake2b
 t	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    t: [u32; 2],$/;"	m	struct:Blake2s
 t	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    t: Fe,$/;"	m	struct:GeP1P1
@@ -1761,12 +1990,23 @@ times_x	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 times_x_reduce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn times_x_reduce(self) -> Gf128 {$/;"	P	implementation:Gf128
 timestamp	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn timestamp(&self) -> u64 {$/;"	P	implementation:Block
 timestamp	/home/lieroz/blockchain_rust/src/block.rs	/^    timestamp: u64,$/;"	m	struct:Block
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to(mut self, key: &'a K) -> Self {$/;"	P	implementation:Iterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to(mut self, key: &'a K) -> Self {$/;"	P	implementation:KeyIterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to(mut self, key: &'a K) -> Self {$/;"	P	implementation:ValueIterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to(self, key: &'a K) -> Self;$/;"	P	interface:LevelDBIterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    to: Option<&'a K>,$/;"	m	struct:Iterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    to: Option<&'a K>,$/;"	m	struct:KeyIterator
+to	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    to: Option<&'a K>,$/;"	m	struct:ValueIterator
 to_bits	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^fn to_bits(x: u64) -> (u64, u64) {$/;"	f
 to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn to_bytes(&self) -> [u8; 32] {$/;"	P	implementation:Fe
 to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn to_bytes(&self) -> [u8; 32] {$/;"	P	implementation:GeP2
 to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn to_bytes(&self) -> [u8; 32] {$/;"	P	implementation:GeP3
 to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ghash.rs	/^    fn to_bytes(&self) -> [u8; 16] {$/;"	P	implementation:Gf128
 to_cached	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn to_cached(&self) -> GeCached {$/;"	P	implementation:GeP3
+to_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to_key(&self) -> Option<&K> {$/;"	P	implementation:Iterator
+to_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to_key(&self) -> Option<&K> {$/;"	P	implementation:KeyIterator
+to_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to_key(&self) -> Option<&K> {$/;"	P	implementation:ValueIterator
+to_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn to_key(&self) -> Option<&K>;$/;"	P	interface:LevelDBIterator
 to_p2	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn to_p2(&self) -> GeP2 {$/;"	P	implementation:GeP1P1
 to_p2	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn to_p2(&self) -> GeP2 {$/;"	P	implementation:GeP3
 to_p3	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn to_p3(&self) -> GeP3 {$/;"	P	implementation:GeP1P1
@@ -1800,8 +2040,14 @@ update	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-
 update	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    fn update(&mut self) {$/;"	P	implementation:ChaCha20
 update_history	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^fn update_history(in_hist: &mut [u8], out_hist: &mut [u8], last_in: &[u8], last_out: &[u8]) {$/;"	f
 util	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod util;$/;"	n
+valid	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn valid(&self) -> bool {$/;"	P	interface:LevelDBIterator
 validate	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn validate(&self) -> bool {$/;"	P	implementation:ProofOfWork
+value	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn value(&self) -> Vec<u8> {$/;"	P	interface:LevelDBIterator
+value_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn value_iter(&'a self, options: ReadOptions<'a, K>) -> ValueIterator<K> {$/;"	P	implementation:Database
+value_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/iterator.rs	/^    fn value_iter(&'a self, options: ReadOptions<'a, K>) -> ValueIterator<K>;$/;"	P	interface:Iterable
+value_iter	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/snapshots.rs	/^    fn value_iter(&'a self, mut options: ReadOptions<'a, K>) -> ValueIterator<K> {$/;"	P	implementation:Snapshot
 verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^pub fn verify(message: &[u8], public_key: &[u8], signature: &[u8]) -> bool {$/;"	f
+verify_checksums	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub verify_checksums: bool,$/;"	m	struct:ReadOptions
 which	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^        which: u32$/;"	m	struct:tests::CurveGen
 whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod whirlpool;$/;"	n
 whirlpool_1000000a_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^    fn whirlpool_1000000a_test() {$/;"	f	module:test
@@ -1809,6 +2055,9 @@ whirlpool_static_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec8
 wikipedia_tests	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/rc4.rs	/^    fn wikipedia_tests() {$/;"	f	module:test
 wrap	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn wrap(p: X) -> DecPadding<X> { DecPadding { padding: p } }$/;"	P	implementation:DecPadding
 wrap	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    fn wrap(p: X) -> EncPadding<X> { EncPadding { padding: p } }$/;"	P	implementation:EncPadding
+write	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    fn write(&self, options: WriteOptions, batch: &Writebatch<K>) -> Result<(), Error> {$/;"	P	implementation:Database
+write	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    fn write(&self, options: WriteOptions, batch: &Writebatch<K>) -> Result<(), Error>;$/;"	P	interface:Batch
+write_buffer_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/options.rs	/^    pub write_buffer_size: Option<size_t>,$/;"	m	struct:Options
 write_row_major	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn write_row_major(block: u32x4, output: &mut [u8]) {$/;"	f	function:un_bit_slice_1x128_with_u32x4
 write_u32_be	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn write_u32_be(&mut self, val: u32) -> io::Result<()> {$/;"	f
 write_u32_be	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn write_u32_be(&mut self, val: u32) -> io::Result<()>;$/;"	P	interface:WriteExt
@@ -1826,6 +2075,7 @@ write_u64_le	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-c
 write_u64v_le	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub fn write_u64v_le(dst: &mut[u8], input: &[u64]) {$/;"	f
 write_u8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn write_u8(&mut self, val: u8) -> io::Result<()> {$/;"	f
 write_u8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn write_u8(&mut self, val: u8) -> io::Result<()>;$/;"	P	interface:WriteExt
+writebatch	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/leveldb-0.8.4/src/database/batch.rs	/^    writebatch: RawWritebatch,$/;"	m	struct:Writebatch
 x	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    x: Fe,$/;"	m	struct:GeP1P1
 x	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    x: Fe,$/;"	m	struct:GeP2
 x	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    x: Fe,$/;"	m	struct:GeP3
