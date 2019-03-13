@@ -5,5 +5,7 @@ authors = ["Andrey Kamakin <a.kamakin@icloud.com>"]
 edition = "2018"
 
 [dependencies]
-rust-crypto = "^0.2"
-leveldb = "^0.8"
+rust-crypto = "0.2.36"
+serde_derive = "1.0.89"
+serde = "1.0.89"
+bincode = "1.1.2"
