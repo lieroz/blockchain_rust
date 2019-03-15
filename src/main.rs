@@ -6,19 +6,16 @@ extern crate bincode;
 mod proofofwork;
 mod block;
 mod blockchain;
+mod cli;
 
-use proofofwork::ProofOfWork;
 use blockchain::Blockchain;
+use cli::CLI;
+
+use std::env;
 
 fn main() {
     let mut bc = Blockchain::new();
-
-    bc.add_block("Send 1 BTC to Ivan");
-    bc.add_block("Send 2 more BTC to Ivan");
-
-    for block in bc.iter() {
-        println!("{:?}", block);
-        let pow = ProofOfWork::new(&block);
-        println!("{}", pow.validate());
-    }
+    let args: Vec<String> = env::args().collect();
+    let mut cli = CLI::new(&mut bc, &args);
+    cli.run();
 }
