@@ -2,7 +2,7 @@ use crate::proofofwork::ProofOfWork;
 
 use std::time::SystemTime;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Block {
     timestamp: u64,
     data: String,
@@ -32,6 +32,14 @@ impl Block {
 
     pub fn new_genesis_block() -> Block {
         Block::new("Genesis Block", "")
+    }
+
+    pub fn serialize(&self) -> Vec<u8> {
+        bincode::serialize(&self).expect("error serializing block")
+    }
+
+    pub fn deserialize(bytes: Vec<u8>) -> Block {
+        bincode::deserialize(&bytes[..]).expect("error decerializing block")
     }
 
     pub fn timestamp(&self) -> u64 {

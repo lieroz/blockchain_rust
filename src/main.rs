@@ -1,3 +1,8 @@
+#[macro_use]
+extern crate serde_derive;
+extern crate serde;
+extern crate bincode;
+
 mod proofofwork;
 mod block;
 mod blockchain;
@@ -11,7 +16,7 @@ fn main() {
     bc.add_block("Send 1 BTC to Ivan");
     bc.add_block("Send 2 more BTC to Ivan");
 
-    for block in &bc.blocks {
+    for block in bc.iter() {
         println!("{:?}", block);
         let pow = ProofOfWork::new(&block);
         println!("{}", pow.validate());
