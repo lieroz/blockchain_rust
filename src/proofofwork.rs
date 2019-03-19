@@ -24,7 +24,7 @@ impl<'a> ProofOfWork<'a> {
     fn prepare_data(&self, nonce: u64) -> String {
         format!("{}{}{}{}{}",
                 self.block.prev_block_hash(),
-                self.block.data(),
+                self.block.hash_transactions(),
                 self.block.timestamp(),
                 self.target,
                 nonce)

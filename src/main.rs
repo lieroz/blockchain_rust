@@ -7,15 +7,14 @@ mod proofofwork;
 mod block;
 mod blockchain;
 mod cli;
+mod transaction;
 
-use blockchain::Blockchain;
 use cli::CLI;
 
 use std::env;
 
 fn main() {
-    let mut bc = Blockchain::new();
     let args: Vec<String> = env::args().collect();
-    let mut cli = CLI::new(&mut bc, &args);
+    let cli = CLI::new(&args);
     cli.run();
 }
