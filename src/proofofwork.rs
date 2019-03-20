@@ -1,8 +1,8 @@
 use crate::block::Block;
 
-use std::cmp::Ordering;
-use crypto::sha2::Sha256;
 use crypto::digest::Digest;
+use crypto::sha2::Sha256;
+use std::cmp::Ordering;
 
 const MAX_NONCE: u64 = std::u64::MAX;
 const TARGET_BYTE: i32 = 61;
@@ -15,19 +15,24 @@ pub struct ProofOfWork<'a> {
 
 impl<'a> ProofOfWork<'a> {
     pub fn new(block: &Block) -> ProofOfWork {
-        ProofOfWork{
+        ProofOfWork {
             block,
-            target: (0..64).rev().map(|x| if x == TARGET_BYTE {'1'} else {'0'}).collect(),
+            target: (0..64)
+                .rev()
+                .map(|x| if x == TARGET_BYTE { '1' } else { '0' })
+                .collect(),
         }
     }
 
     fn prepare_data(&self, nonce: u64) -> String {
-        format!("{}{}{}{}{}",
-                self.block.prev_block_hash(),
-                self.block.hash_transactions(),
-                self.block.timestamp(),
-                self.target,
-                nonce)
+        format!(
+            "{}{}{}{}{}",
+            self.block.prev_block_hash(),
+            self.block.hash_transactions(),
+            self.block.timestamp(),
+            self.target,
+            nonce
+        )
     }
 
     pub fn run(&self) -> (u64, String) {
@@ -62,4 +67,3 @@ impl<'a> ProofOfWork<'a> {
         }
     }
 }
-

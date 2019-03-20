@@ -5,12 +5,12 @@ use crate::transaction::Transaction;
 use std::process;
 
 pub struct CLI<'a> {
-    args: &'a[String],
+    args: &'a [String],
 }
 
 impl<'a> CLI<'a> {
-    pub fn new(args: &'a[String]) -> CLI<'a> {
-        CLI{args}
+    pub fn new(args: &'a [String]) -> CLI<'a> {
+        CLI { args }
     }
 
     fn print_usage(&self) {
@@ -29,7 +29,7 @@ impl<'a> CLI<'a> {
     }
 
     fn print_chain(&self) {
-        let mut bc = Blockchain::new("");
+        let mut bc = Blockchain::new();
         for block in bc.iter() {
             println!("Prev. hash: {}", block.prev_block_hash());
             println!("Hash: {}", block.hash());
@@ -40,7 +40,7 @@ impl<'a> CLI<'a> {
     }
 
     fn get_balance(&self, address: &str) {
-        let mut bc = Blockchain::new(address);
+        let mut bc = Blockchain::new();
         let mut balance = 0;
         let utxos = bc.find_utxo(address);
 
@@ -52,12 +52,12 @@ impl<'a> CLI<'a> {
     }
 
     fn create(&self, address: &str) {
-        let _ = Blockchain::new(address);
+        let _ = Blockchain::create(address);
         println!("Success!");
     }
 
     fn send(&self, from: &str, to: &str, amount: i32) {
-        let mut bc = Blockchain::new(from);
+        let mut bc = Blockchain::new();
         let tx = Transaction::new_utxo_tx(from, to, amount, &mut bc);
         bc.mine_block(vec![tx]);
         println!("Success!");
@@ -69,12 +69,16 @@ impl<'a> CLI<'a> {
         match self.args[1].as_ref() {
             "get_balance" => match self.args[2].as_ref() {
                 "-address" => self.get_balance(&self.args[3][..]),
-                _ => panic!("invalid argument to command")
+                _ => panic!("invalid argument to command"),
             },
             "send" => match self.args[2].as_ref() {
                 "-from" => match self.args[4].as_ref() {
                     "-to" => match self.args[6].as_ref() {
-                        "-amount" => self.send(&self.args[3][..], &self.args[5][..], self.args[7].parse::<i32>().unwrap()),
+                        "-amount" => self.send(
+                            &self.args[3][..],
+                            &self.args[5][..],
+                            self.args[7].parse::<i32>().unwrap(),
+                        ),
                         _ => self.print_usage(),
                     },
                     _ => self.print_usage(),

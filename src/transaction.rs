@@ -1,7 +1,7 @@
 use crate::blockchain::Blockchain;
 
-use crypto::sha2::Sha256;
 use crypto::digest::Digest;
+use crypto::sha2::Sha256;
 
 const SUBSIDY: i32 = 10;
 
@@ -15,14 +15,17 @@ pub struct Transaction {
 impl Transaction {
     pub fn new_coin_base_tx(to: &str, data: &str) -> Transaction {
         let mut data = String::from(data);
+
         if data.is_empty() {
             data = format!("Reward to: {}", to);
         }
-        let mut tx = Transaction{
+
+        let mut tx = Transaction {
             id: String::new(),
             v_in: vec![TXInput::new("", -1, &data[..])],
             v_out: vec![TXOutput::new(SUBSIDY, to)],
         };
+
         tx.set_id();
         tx
     }
@@ -31,6 +34,7 @@ impl Transaction {
         let mut inputs = Vec::new();
         let mut outputs = Vec::new();
         let (acc, valid_outputs) = bc.find_spendable_outputs(from, amount);
+
         if acc < amount {
             panic!("ERROR: Not enough funds")
         }
@@ -43,15 +47,17 @@ impl Transaction {
         }
 
         outputs.push(TXOutput::new(amount, to));
+
         if acc > amount {
             outputs.push(TXOutput::new(acc - amount, from))
         }
 
-        let mut tx = Transaction{
+        let mut tx = Transaction {
             id: String::new(),
             v_in: inputs,
             v_out: outputs,
         };
+
         tx.set_id();
         tx
     }
@@ -62,8 +68,7 @@ impl Transaction {
 
     fn set_id(&mut self) {
         let mut hasher = Sha256::new();
-        let data = bincode::serialize(&self)
-            .expect("error serializing transaction");
+        let data = bincode::serialize(&self).expect("error serializing transaction");
         hasher.input(&data);
         self.id = hasher.result_str()
     }
@@ -90,7 +95,7 @@ pub struct TXInput {
 
 impl TXInput {
     pub fn new(tx_id: &str, v_out: i32, data: &str) -> TXInput {
-        TXInput{
+        TXInput {
             tx_id: tx_id.to_string(),
             v_out,
             script_sig: data.to_string(),
@@ -98,7 +103,7 @@ impl TXInput {
     }
 
     pub fn can_unlock_output(&self, unlocking_data: &str) -> bool {
-        self.script_sig  == unlocking_data
+        self.script_sig == unlocking_data
     }
 
     pub fn tx_id(&self) -> &str {
@@ -118,14 +123,14 @@ pub struct TXOutput {
 
 impl TXOutput {
     pub fn new(amount: i32, to: &str) -> TXOutput {
-        TXOutput{
+        TXOutput {
             value: amount,
             script_pub_key: to.to_string(),
         }
     }
 
     pub fn can_be_unlocked(&self, unlocking_data: &str) -> bool {
-        self.script_pub_key  == unlocking_data
+        self.script_pub_key == unlocking_data
     }
 
     pub fn value(&self) -> i32 {

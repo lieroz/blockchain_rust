@@ -1,9 +1,9 @@
 use crate::proofofwork::ProofOfWork;
 use crate::transaction::Transaction;
 
-use std::time::SystemTime;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
+use std::time::SystemTime;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Block {
@@ -19,7 +19,7 @@ impl Block {
         let timestamp = SystemTime::now()
             .duration_since(SystemTime::UNIX_EPOCH)
             .expect("SystemTime before UNIX EPOCH!");
-        let mut block = Block{
+        let mut block = Block {
             timestamp: timestamp.as_secs(),
             transactions,
             prev_block_hash: prev_block_hash.to_string(),

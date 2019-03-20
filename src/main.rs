@@ -1,12 +1,12 @@
 #[macro_use]
 extern crate serde_derive;
-extern crate serde;
 extern crate bincode;
+extern crate serde;
 
-mod proofofwork;
 mod block;
 mod blockchain;
 mod cli;
+mod proofofwork;
 mod transaction;
 
 use cli::CLI;
