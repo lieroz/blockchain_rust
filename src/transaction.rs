@@ -2,8 +2,10 @@ use crate::blockchain::Blockchain;
 use crate::wallet::{self, Wallet};
 use crate::wallets::Wallets;
 
+use ring::signature;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
+use std::collections::HashMap;
 
 const SUBSIDY: i32 = 10;
 
@@ -35,8 +37,10 @@ impl Transaction {
     pub fn new_utxo_tx(from: &str, to: &str, amount: i32, bc: &mut Blockchain) -> Transaction {
         let mut inputs = Vec::new();
         let mut outputs = Vec::new();
-        let wallet = Wallets::new().get_wallet(from);
-        let (acc, valid_outputs) = bc.find_spendable_outputs(from, amount);
+        let mut wallets = Wallets::new();
+        let wallet = wallets.get_wallet(from);
+        let pub_key_hash = Wallet::hash_pub_key(wallet.public_key());
+        let (acc, valid_outputs) = bc.find_spendable_outputs(&pub_key_hash[..], amount);
 
         if acc < amount {
             panic!("ERROR: Not enough funds")
@@ -44,7 +48,7 @@ impl Transaction {
 
         for (idx, outs) in valid_outputs.iter() {
             for out in outs {
-                let input = TXInput::new(idx, *out, Vec::new(), wallet.public_key());
+                let input = TXInput::new(idx, *out, Vec::new(), wallet.public_key().to_vec());
                 inputs.push(input);
             }
         }
@@ -62,6 +66,7 @@ impl Transaction {
         };
 
         tx.set_id();
+        bc.sign_transaction(&mut tx, wallet.pkcs8_bytes());
         tx
     }
 
@@ -69,29 +74,84 @@ impl Transaction {
         self.v_in.len() == 1 && self.v_in[0].tx_id.len() == 0 && self.v_in[0].v_out == -1
     }
 
-    pub fn sign(&self, priv_key: ) {
+    pub fn sign(&mut self, pkcs8_bytes: &[u8], prev_txs: &HashMap<String, Transaction>) {
+        if self.is_coinbase() {
+            return
+        }
+
+        for tx_in in self.v_in() {
+            if prev_txs[tx_in.tx_id()].id().is_empty() {
+                panic!("error, previous transaction is not correct");
+            }
+        }
+
+        let mut tx_copy = self.trimmed_copy();
+        let key_pair = signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(pkcs8_bytes))
+            .expect("error converting bytes to key pair");
+        let mut signatures = Vec::new();
+
+        for (i, tx_in) in self.v_in().iter().enumerate() {
+            let prev_tx = &prev_txs[tx_in.tx_id()];
+            let tx_copy_in = &mut tx_copy.mut_v_in()[i];
+            tx_copy_in.set_pub_key(prev_tx.v_out()[tx_in.v_out() as usize].pub_key_hash());
+            tx_copy.set_id();
+            let sig = key_pair.sign(tx_copy.id().as_bytes());
+            signatures.push(sig);
+        }
+
+        for (i, sig) in signatures.iter().enumerate() {
+            self.v_in[i].set_signature(sig.as_ref());
+        }
     }
 
     pub fn trimmed_copy(&self) -> Transaction {
         let mut inputs = Vec::new();
         let mut outputs = Vec::new();
 
-        for tx_in in self.v_in {
+        for tx_in in self.v_in() {
             inputs.push(TXInput::new(tx_in.tx_id(), tx_in.v_out(), Vec::new(), Vec::new()));
         }
 
-        for tx_out in self.v_out {
+        for tx_out in self.v_out() {
             outputs.push(tx_out.clone());
         }
 
         Transaction{
-            id: self.id,
+            id: self.id.clone(),
             v_in: inputs,
             v_out: outputs,
         }
     }
 
-    pub fn verify(&self) {
+    pub fn verify(&self, prev_txs: &HashMap<String, Transaction>) -> bool {
+        if self.is_coinbase() {
+            return true
+        }
+
+        for tx_in in self.v_in() {
+            if prev_txs[tx_in.tx_id()].id().is_empty() {
+                panic!("error, previous transaction is not correct");
+            }
+        }
+
+        let mut tx_copy = self.trimmed_copy();
+
+        for (i, tx_in) in self.v_in().iter().enumerate() {
+            let prev_tx = &prev_txs[tx_in.tx_id()];
+            let tx_copy_in = &mut tx_copy.mut_v_in()[i];
+            tx_copy_in.set_pub_key(prev_tx.v_out()[tx_in.v_out() as usize].pub_key_hash());
+            tx_copy.set_id();
+
+            match signature::verify(&signature::ED25519,
+                                    untrusted::Input::from(tx_in.pub_key()),
+                                    untrusted::Input::from(tx_copy.id().as_bytes()),
+                                    untrusted::Input::from(tx_in.signature())) {
+                Err(_) => return false,
+                _ => continue,
+            }
+        }
+
+        true
     }
 
     fn set_id(&mut self) {
@@ -109,6 +169,10 @@ impl Transaction {
         &self.v_in
     }
 
+    pub fn mut_v_in(&mut self) -> &mut [TXInput] {
+        &mut self.v_in
+    }
+
     pub fn v_out(&self) -> &[TXOutput] {
         &self.v_out
     }
@@ -116,20 +180,20 @@ impl Transaction {
 
 impl ToString for Transaction {
     fn to_string(&self) -> String {
-        let mut lines = String::from(format!("--- Transaction {}:", self.id));
+        let mut lines = String::from(format!("--- Transaction {}:\n", self.id));
 
-        for (i, input) in self.v_in.iter().enumerate() {
-            lines.push_str(&format!("     Input {}:", i)[..]);
-            lines.push_str(&format!("       TXID:      {}", input.tx_id())[..]);
-            lines.push_str(&format!("       Out:       {}", input.v_out())[..]);
-            lines.push_str(&format!("       Signature: {}", input.signature())[..]);
-            lines.push_str(&format!("       PubKey:    {}", input.pub_key())[..]);
+        for (i, input) in self.v_in().iter().enumerate() {
+            lines.push_str(&format!("     Input {}:\n", i)[..]);
+            lines.push_str(&format!("       TXID:      {}\n", input.tx_id())[..]);
+            lines.push_str(&format!("       Out:       {}\n", input.v_out())[..]);
+            lines.push_str(&format!("       Signature: {:?}\n", input.signature())[..]);
+            lines.push_str(&format!("       PubKey:    {:?}\n\n", input.pub_key())[..]);
         }
 
-        for (i, output) in self.v_out.iter().enumerate() {
-            lines.push_str(&format!("     Output {}:", i)[..]);
-            lines.push_str(&format!("       Value:  {}", output.value())[..]);
-            lines.push_str(&format!("       Script: {}", output.pub_key_hash())[..]);
+        for (i, output) in self.v_out().iter().enumerate() {
+            lines.push_str(&format!("     Output {}:\n", i)[..]);
+            lines.push_str(&format!("       Value:  {}\n", output.value())[..]);
+            lines.push_str(&format!("       Script: {:?}\n\n", output.pub_key_hash())[..]);
         }
 
         lines
@@ -154,13 +218,12 @@ impl TXInput {
         }
     }
 
-    pub fn uses_key(&self, pub_key_hash: &str) -> bool {
-        let pub_key_hash_bytes = pub_key_hash.as_bytes();
-        let locking_hash = Wallet::hash_pub_key(&pub_key_hash_bytes);
-        locking_hash.len() == pub_key_hash_bytes.len()
+    pub fn uses_key(&self, pub_key_hash: &[u8]) -> bool {
+        let locking_hash = Wallet::hash_pub_key(&self.public_key);
+        locking_hash.len() == pub_key_hash.len()
             && locking_hash
                 .iter()
-                .zip(pub_key_hash_bytes)
+                .zip(pub_key_hash)
                 .all(|(a, b)| a == b)
     }
 
@@ -172,12 +235,20 @@ impl TXInput {
         self.v_out
     }
 
-    pub fn signature(&self) -> String {
-        std::str::from_utf8(&self.signature).unwrap().to_string()
+    pub fn signature(&self) -> &[u8] {
+        &self.signature[..]
     }
 
-    pub fn pub_key(&self) -> String {
-        std::str::from_utf8(&self.public_key).unwrap().to_string()
+    pub fn set_signature(&mut self, signature: &[u8]) {
+        self.signature = signature.to_vec()
+    }
+
+    pub fn pub_key(&self) -> &[u8] {
+        &self.public_key[..]
+    }
+
+    pub fn set_pub_key(&mut self, bytes: &[u8]) {
+        self.public_key = bytes.to_vec();
     }
 }
 
@@ -188,12 +259,12 @@ pub struct TXOutput {
 }
 
 impl TXOutput {
-    pub fn new(amount: i32, to: &str) -> TXOutput {
+    pub fn new(amount: i32, address: &str) -> TXOutput {
         let mut txo = TXOutput {
             value: amount,
             pub_key_hash: Vec::new(),
         };
-        txo.lock(to);
+        txo.lock(address);
         txo
     }
 
@@ -219,8 +290,7 @@ impl TXOutput {
         self.value
     }
 
-    pub fn pub_key_hash(&self) -> String {
-        std::str::from_utf8(&self.pub_key_hash).unwrap().to_string()
+    pub fn pub_key_hash(&self) -> &[u8] {
+        &self.pub_key_hash
     }
-
 }

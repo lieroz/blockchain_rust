@@ -2446,8 +2446,9 @@ cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0
 cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/aes.rs	/^    cpu_features: cpu::Features,$/;"	m	struct:Key
 cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^    cpu_features: cpu::Features,$/;"	m	struct:Context
 create	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn create(address: &str) -> Blockchain {$/;"	P	implementation:Blockchain
-create	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create(&self, address: &str) {$/;"	P	implementation:CLI
+create_blockchain	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_blockchain(&self, address: &str) {$/;"	P	implementation:CLI
 create_keys	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^fn create_keys<D: Digest>(digest: &mut D, key: &[u8]) -> (Vec<u8>, Vec<u8>) {$/;"	f
+create_wallet	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_wallet(&self) {$/;"	P	implementation:CLI
 create_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn create_wallet(&mut self) -> String {$/;"	P	implementation:Wallets
 cryptoutil	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^mod cryptoutil;$/;"	n
 ctr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        ctr: Vec<u8>,$/;"	m	struct:test::CtrTest
@@ -2613,6 +2614,7 @@ deserialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1
 deserialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    deserialize: RenameRule,$/;"	m	struct:RenameAllRules
 deserialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    deserialize: String,$/;"	m	struct:Name
 deserialize	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> Block {$/;"	P	implementation:Block
+deserialize	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> Wallet {$/;"	P	implementation:Wallet
 deserialize_adjacently_tagged_enum	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/de.rs	/^fn deserialize_adjacently_tagged_enum($/;"	f
 deserialize_aliases	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    deserialize_aliases: Vec<String>,$/;"	m	struct:Name
 deserialize_aliases	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    fn deserialize_aliases(&self) -> Vec<String> {$/;"	P	implementation:Name
@@ -3072,8 +3074,9 @@ finalize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 finalized	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    finalized : bool,$/;"	m	struct:Poly1305
 finalized	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^    finalized: bool,$/;"	m	struct:Whirlpool
 find_spendable_outputs	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_spendable_outputs($/;"	P	implementation:Blockchain
-find_unspent_transactions	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_unspent_transactions(&mut self, address: &str) -> Vec<Transaction> {$/;"	P	implementation:Blockchain
-find_utxo	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_utxo(&mut self, address: &str) -> Vec<TXOutput> {$/;"	P	implementation:Blockchain
+find_transaction	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_transaction(&mut self, id: &str) -> Transaction {$/;"	P	implementation:Blockchain
+find_unspent_transactions	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_unspent_transactions(&mut self, pub_key_hash: &[u8]) -> Vec<Transaction> {$/;"	P	implementation:Blockchain
+find_utxo	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn find_utxo(&mut self, pub_key_hash: &[u8]) -> Vec<TXOutput> {$/;"	P	implementation:Blockchain
 finish	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/poly1305.rs	/^    pub(super) fn finish(mut self) -> Tag { self.func.emit(&mut self.opaque, &self.nonce) }$/;"	P	implementation:Context
 finish	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/digest.rs	/^    pub fn finish(mut self) -> Digest {$/;"	P	implementation:Context
 finish	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/poly1305.rs	/^    fn finish(&mut self) {$/;"	P	implementation:Poly1305
@@ -3244,7 +3247,7 @@ get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.
 get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/typedb-0.8.0/src/lib.rs	/^    pub fn get(&mut self, key: &K) -> Result<Option<V>, KVError> {$/;"	f
 get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn get(&self, i: usize) -> Option<&u8> { self.bytes.get(i) }$/;"	P	implementation:no_panic::Slice
 get_address	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn get_address(&self) -> String {$/;"	P	implementation:Wallet
-get_addresses	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_addresses(&self) -> Vec<String> {$/;"	P	implementation:Wallets
+get_addresses	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_addresses(&mut self) -> Vec<String> {$/;"	P	implementation:Wallets
 get_balance	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn get_balance(&self, address: &str) {$/;"	P	implementation:CLI
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	P	implementation:SliceReader
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	f
@@ -3267,7 +3270,7 @@ get_serde_meta_items	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec82
 get_slice	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn get_slice(&self, r: core::ops::Range<usize>)$/;"	P	implementation:no_panic::Slice
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^    fn get_test_vectors()-> [TestVector; 5]{$/;"	f	module:test
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^  fn get_test_vectors()-> Vec<TestVector>{$/;"	f	module:test
-get_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_wallet(&self, address: &str) -> &Wallet {$/;"	P	implementation:Wallets
+get_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_wallet(&mut self, address: &str) -> Wallet {$/;"	P	implementation:Wallets
 get_where_predicates	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^fn get_where_predicates($/;"	f
 get_with_tokens	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    fn get_with_tokens(self) -> Option<(TokenStream, T)> {$/;"	P	implementation:Attr
 getauxval	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/cpu.rs	/^            fn getauxval(type_: libc::c_ulong) -> libc::c_ulong;$/;"	f	function:arm::linux_setup
@@ -3671,13 +3674,13 @@ limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2
 limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/internal.rs	/^    fn limit(&self) -> Option<u64> {$/;"	P	implementation:Infinite
 limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/internal.rs	/^    fn limit(&self) -> Option<u64>;$/;"	P	interface:SizeLimit
 linux_setup	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/cpu.rs	/^    pub fn linux_setup() {$/;"	f	module:arm
+list_addresses	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn list_addresses(&self) {$/;"	P	implementation:CLI
 little_endian	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/config.rs	/^    pub fn little_endian(&mut self) -> &mut Self {$/;"	P	implementation:Config
 lo	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^    lo: u64,$/;"	m	struct:u128
 load_3i	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn load_3i(s: &[u8]) -> i64 {$/;"	f
 load_3u	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn load_3u(s: &[u8]) -> u64 {$/;"	f
 load_4i	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn load_4i(s: &[u8]) -> i64 {$/;"	f
 load_4u	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn load_4u(s: &[u8]) -> u64 {$/;"	f
-load_from_file	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn load_from_file(&mut self) {$/;"	P	implementation:Wallets
 load_from_persist	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/typedb-0.8.0/src/lib.rs	/^    fn load_from_persist(&mut self) -> KVResult {$/;"	f
 local	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/de.rs	/^    local: syn::Ident,$/;"	m	struct:Parameters
 lock	/home/lieroz/blockchain_rust/src/transaction.rs	/^    fn lock(&mut self, address: &str) {$/;"	P	implementation:TXOutput
@@ -3768,6 +3771,7 @@ mul_assoc	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 mul_commutes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn mul_commutes() {$/;"	f	module:tests
 mul_mont	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ops/elem.rs	/^pub fn mul_mont<M, EA: Encoding, EB: Encoding>($/;"	f
 mut_if	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/ser.rs	/^fn mut_if(is_mut: bool) -> Option<TokenStream> {$/;"	f
+mut_v_in	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn mut_v_in(&mut self) -> &mut [TXInput] {$/;"	P	implementation:Transaction
 n	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ops.rs	/^    pub n: Elem<Unencoded>,$/;"	m	struct:CommonOps
 n	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/verification.rs	/^    pub n: bigint::Modulus<N>,$/;"	m	struct:Key
 n0	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/bigint.rs	/^    n0: N0,$/;"	m	struct:Modulus
@@ -3903,7 +3907,7 @@ new	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new(transactions: Vec
 new	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn new() -> Blockchain {$/;"	P	implementation:Blockchain
 new	/home/lieroz/blockchain_rust/src/cli.rs	/^    pub fn new(args: &'a [String]) -> CLI<'a> {$/;"	P	implementation:CLI
 new	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn new(block: &Block) -> ProofOfWork {$/;"	P	implementation:ProofOfWork
-new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(amount: i32, to: &str) -> TXOutput {$/;"	P	implementation:TXOutput
+new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(amount: i32, address: &str) -> TXOutput {$/;"	P	implementation:TXOutput
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(tx_id: &str, v_out: i32, signature: Vec<u8>, public_key: Vec<u8>) -> TXInput {$/;"	P	implementation:TXInput
 new	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn new() -> Wallet {$/;"	P	implementation:Wallet
 new	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn new() -> Wallets {$/;"	P	implementation:Wallets
@@ -4183,6 +4187,7 @@ pkcs1_digestinfo_prefix	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9e
 pkcs1_encode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/padding.rs	/^fn pkcs1_encode(pkcs1: &PKCS1, m_hash: &digest::Digest, m_out: &mut [u8]) {$/;"	f
 pkcs8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/lib.rs	/^mod pkcs8;$/;"	n
 pkcs8_bytes	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pkcs8_bytes: Vec<u8>,$/;"	m	struct:Wallet
+pkcs8_bytes	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn pkcs8_bytes(&self) -> &[u8] {$/;"	P	implementation:Wallet
 pkcs8_template	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ecdsa/signing.rs	/^    pkcs8_template: &'static pkcs8::Template,$/;"	m	struct:Algorithm
 place_lifetime	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/de.rs	/^fn place_lifetime() -> syn::LifetimeDef {$/;"	f
 plain	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        plain: Vec<u8>,$/;"	m	struct:test::CtrTest
@@ -4290,8 +4295,8 @@ processor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-cryp
 proofofwork	/home/lieroz/blockchain_rust/src/main.rs	/^mod proofofwork;$/;"	n
 ps_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/padding.rs	/^    ps_len: usize,$/;"	m	struct:PSSMetrics
 pss_digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/padding.rs	/^fn pss_digest($/;"	f
-pub_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn pub_key(&self) -> String {$/;"	P	implementation:TXInput
-pub_key_hash	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn pub_key_hash(&self) -> String {$/;"	P	implementation:TXOutput
+pub_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn pub_key(&self) -> &[u8] {$/;"	P	implementation:TXInput
+pub_key_hash	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn pub_key_hash(&self) -> &[u8] {$/;"	P	implementation:TXOutput
 pub_key_hash	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub_key_hash: Vec<u8>,$/;"	m	struct:TXOutput
 public	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/signing.rs	/^    public: verification::Key,$/;"	m	struct:KeyPair
 public_from_private	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec.rs	/^    public_from_private:$/;"	m	struct:Curve
@@ -4307,7 +4312,8 @@ public_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.1
 public_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/signing.rs	/^    public_key: PublicKey,$/;"	m	struct:KeyPair
 public_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/signature.rs	/^    fn public_key(&self) -> &Self::PublicKey;$/;"	P	interface:KeyPair
 public_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    public_key: Vec<u8>,$/;"	m	struct:TXInput
-public_key	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn public_key(&self) -> Vec<u8> {$/;"	P	implementation:Wallet
+public_key	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn public_key(&self) -> &[u8] {$/;"	P	implementation:Wallet
+public_key	/home/lieroz/blockchain_rust/src/wallet.rs	/^    public_key: Vec<u8>,$/;"	m	struct:Wallet
 public_key_is_missing	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/error.rs	/^    pub(crate) fn public_key_is_missing() -> Self { KeyRejected("PublicKeyIsMissing") }$/;"	P	implementation:KeyRejected
 public_key_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec.rs	/^    pub public_key_len: usize,$/;"	m	struct:Curve
 public_key_ops	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ops.rs	/^    pub public_key_ops: &'static PublicKeyOps,$/;"	m	struct:PublicScalarOps
@@ -4544,7 +4550,6 @@ salt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.
 salt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/scrypt.rs	/^        salt: &'static str,$/;"	m	struct:test::Test
 salted_expand_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blowfish.rs	/^    pub fn salted_expand_key(&mut self, salt: &[u8], key: &[u8]) {$/;"	P	implementation:Blowfish
 sample_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/quic.rs	/^    pub fn sample_len(&self) -> usize { SAMPLE_LEN }$/;"	P	implementation:Algorithm
-save_to_file	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn save_to_file(&self) {$/;"	P	implementation:Wallets
 sc_muladd	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^pub fn sc_muladd(s: &mut[u8], a: &[u8], b: &[u8], c: &[u8]) {$/;"	f
 sc_reduce	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^pub fn sc_reduce(s: &mut [u8]) {$/;"	f
 scalar_as_elem	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ops.rs	/^    pub fn scalar_as_elem(&self, a: &Scalar) -> Elem<Unencoded> {$/;"	P	implementation:PublicScalarOps
@@ -4631,6 +4636,7 @@ serialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0
 serialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    serialize: RenameRule,$/;"	m	struct:RenameAllRules
 serialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    serialize: String,$/;"	m	struct:Name
 serialize	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn serialize(&self) -> Vec<u8> {$/;"	P	implementation:Block
+serialize	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn serialize(&self) -> Vec<u8> {$/;"	P	implementation:Wallet
 serialize_adjacently_tagged_variant	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/ser.rs	/^fn serialize_adjacently_tagged_variant($/;"	f
 serialize_body	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/ser.rs	/^fn serialize_body(cont: &Container, params: &Parameters) -> Fragment {$/;"	f
 serialize_bool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/ser/mod.rs	/^    fn serialize_bool(self, _: bool) -> Result<()> {$/;"	P	implementation:SizeChecker
@@ -4857,6 +4863,8 @@ set_lastnode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-c
 set_lastnode	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    fn set_lastnode(&mut self) {$/;"	P	implementation:Blake2s
 set_opt	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    fn set_opt<A: ToTokens>(&mut self, obj: A, value: Option<T>) {$/;"	P	implementation:Attr
 set_pad	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^        fn set_pad(offset: usize, buf: &mut [u8]) {$/;"	f	method:Sha3::finalize
+set_pub_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn set_pub_key(&mut self, bytes: &[u8]) {$/;"	P	implementation:TXInput
+set_signature	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn set_signature(&mut self, signature: &[u8]) {$/;"	P	implementation:TXInput
 set_true	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    fn set_true<A: ToTokens>(&mut self, obj: A) {$/;"	P	implementation:BoolAttr
 setup	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/bcrypt.rs	/^fn setup(cost: u32, salt: &[u8], key: &[u8]) -> Blowfish {$/;"	f
 setup_working_key_aesni_128	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aesni.rs	/^fn setup_working_key_aesni_128(key: &[u8], key_type: KeyType, round_key: &mut [u8]) {$/;"	f
@@ -4927,12 +4935,13 @@ sign	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/sr
 sign	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/hmac.rs	/^    pub fn sign(mut self) -> Signature {$/;"	P	implementation:SigningContext
 sign	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/hmac.rs	/^pub fn sign(key: &SigningKey, data: &[u8]) -> Signature {$/;"	f
 sign	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/signing.rs	/^    pub fn sign($/;"	P	implementation:KeyPair
-sign	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn sign(&self, priv_key: ) {$/;"	P	implementation:Transaction
+sign	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn sign(&mut self, pkcs8_bytes: &[u8], prev_txs: &HashMap<String, Transaction>) {$/;"	P	implementation:Transaction
 sign_	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ecdsa/signing.rs	/^    fn sign_($/;"	P	implementation:KeyPair
+sign_transaction	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn sign_transaction(&mut self, tx: &mut Transaction, pkcs8_bytes: &[u8]) {$/;"	P	implementation:Blockchain
 sign_verify_cases	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^    fn sign_verify_cases() {$/;"	f	module:tests
 signature	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/lib.rs	/^pub mod signature;$/;"	n
 signature	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^pub fn signature(message: &[u8], secret_key: &[u8]) -> [u8; 64] {$/;"	f
-signature	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn signature(&self) -> String {$/;"	P	implementation:TXInput
+signature	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn signature(&self) -> &[u8] {$/;"	P	implementation:TXInput
 signature	/home/lieroz/blockchain_rust/src/transaction.rs	/^    signature: Vec<u8>,$/;"	m	struct:TXInput
 signature_ecdsa_sign_asn1_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ecdsa/signing.rs	/^    fn signature_ecdsa_sign_asn1_test() {$/;"	f	module:tests
 signature_ecdsa_sign_fixed_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ecdsa/signing.rs	/^    fn signature_ecdsa_sign_fixed_test() {$/;"	f	module:tests
@@ -5029,6 +5038,7 @@ step_up	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto
 step_up	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/step_by.rs	/^    fn step_up(self, ammount: T) -> StepUp<T>;$/;"	P	interface:RangeExt
 store	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    store: &'a mut KV<String, StoreValue>,$/;"	m	struct:BlockchainIterator
 store	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    store: KV<String, StoreValue>,$/;"	m	struct:Blockchain
+store	/home/lieroz/blockchain_rust/src/wallets.rs	/^    store: KV<String, StoreValue>,$/;"	m	struct:Wallets
 str	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bs58-0.2.2/src/lib.rs	/^const CHECK_TEST_CASES: &'static [(&'static [u8], &'static str)] = &[$/;"	v
 str	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bs58-0.2.2/src/lib.rs	/^const TEST_CASES: &'static [(&'static [u8], &'static str)] = &[$/;"	v
 str	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bs58-0.2.2/src/traits.rs	/^impl FromBase58 for str {$/;"	c
@@ -5463,7 +5473,7 @@ update_blocks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-
 update_blocks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/poly1305.rs	/^    pub fn update_blocks(&mut self, input: &[u8]) {$/;"	P	implementation:Context
 update_history	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^fn update_history(in_hist: &mut [u8], out_hist: &mut [u8], last_in: &[u8], last_out: &[u8]) {$/;"	f
 urandom	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rand.rs	/^mod urandom {$/;"	n
-uses_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn uses_key(&self, pub_key_hash: &str) -> bool {$/;"	P	implementation:TXInput
+uses_key	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn uses_key(&self, pub_key_hash: &[u8]) -> bool {$/;"	P	implementation:TXInput
 usize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/io/der.rs	/^impl From<Tag> for usize {$/;"	c
 usize_from_u32	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/polyfill.rs	/^pub fn usize_from_u32(x: u32) -> usize { x as usize }$/;"	f
 utf8	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/mod.rs	/^mod utf8;$/;"	n
@@ -5536,7 +5546,7 @@ verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/
 verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/signature.rs	/^    fn verify($/;"	P	interface:VerificationAlgorithm
 verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/signature.rs	/^pub fn verify($/;"	f
 verify	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/ed25519.rs	/^pub fn verify(message: &[u8], public_key: &[u8], signature: &[u8]) -> bool {$/;"	f
-verify	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn verify(&self) {$/;"	P	implementation:Transaction
+verify	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn verify(&self, prev_txs: &HashMap<String, Transaction>) -> bool {$/;"	P	implementation:Transaction
 verify_affine_point_is_on_the_curve	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b.rs	/^fn verify_affine_point_is_on_the_curve($/;"	f
 verify_affine_point_is_on_the_curve_scaled	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b.rs	/^fn verify_affine_point_is_on_the_curve_scaled($/;"	f
 verify_digest	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/ec/suite_b/ecdsa/verification.rs	/^    fn verify_digest($/;"	P	implementation:Algorithm
@@ -5547,6 +5557,7 @@ verify_less_than_modulus	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9
 verify_rsa	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/verification.rs	/^pub fn verify_rsa($/;"	f
 verify_rsa_	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/verification.rs	/^pub(crate) fn verify_rsa_($/;"	f
 verify_slices_are_equal	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/constant_time.rs	/^pub fn verify_slices_are_equal(a: &[u8], b: &[u8]) -> Result<(), error::Unspecified> {$/;"	f
+verify_transaction	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn verify_transaction(&mut self, tx: &Transaction) -> bool {$/;"	P	implementation:Blockchain
 verify_with_own_key	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/hmac.rs	/^pub fn verify_with_own_key($/;"	f
 version_not_supported	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/error.rs	/^    pub(crate) fn version_not_supported() -> Self { KeyRejected("VersionNotSupported") }$/;"	P	implementation:KeyRejected
 visit_bool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/ignored_any.rs	/^    fn visit_bool<E>(self, x: bool) -> Result<Self::Value, E> {$/;"	P	implementation:IgnoredAny
@@ -5718,7 +5729,6 @@ visit_unit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.
 void	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/ser/impossible.rs	/^    void: Void,$/;"	m	struct:Impossible
 wallet	/home/lieroz/blockchain_rust/src/main.rs	/^mod wallet;$/;"	n
 wallets	/home/lieroz/blockchain_rust/src/main.rs	/^mod wallets;$/;"	n
-wallets	/home/lieroz/blockchain_rust/src/wallets.rs	/^    wallets: HashMap<String, Wallet>,$/;"	m	struct:Wallets
 which	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^        which: u32$/;"	m	struct:tests::CurveGen
 whirlpool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod whirlpool;$/;"	n
 whirlpool_1000000a_test	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/whirlpool.rs	/^    fn whirlpool_1000000a_test() {$/;"	f	module:test

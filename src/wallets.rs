@@ -1,53 +1,60 @@
 use crate::wallet::Wallet;
 
-use std::collections::HashMap;
-use std::fs;
-use std::path::Path;
+use typedb::{value, KV};
 
-const WALLET_FILE: &str = "wallet.dat";
+value!(
+    enum StoreValue {
+        String(String),
+        Wallet(Vec<u8>),
+    }
+);
 
-#[derive(Debug, Serialize, Deserialize)]
+const WALLET_FILE: &str = "wallet.db";
+
 pub struct Wallets {
-    wallets: HashMap<String, Wallet>,
+    store: KV<String, StoreValue>,
 }
 
 impl Wallets {
     pub fn new() -> Wallets {
-        Wallets {
-            wallets: HashMap::new(),
-        }
+        let store = KV::<String, StoreValue>::new(WALLET_FILE).expect("error opening wallet store");
+        Wallets{ store }
     }
 
     pub fn create_wallet(&mut self) -> String {
         let wallet = Wallet::new();
         let address = wallet.get_address();
-        self.wallets.insert(address.clone(), wallet);
+        match self.store.insert(
+            address.clone(),
+            StoreValue::Wallet(wallet.serialize()),
+        ) {
+            Ok(_) => (),
+            Err(err) => panic!("error while putting wallet data into store: {}", err),
+        };
         address
     }
 
-    pub fn get_addresses(&self) -> Vec<String> {
-        let mut addresses = Vec::new();
-        for (address, _) in &self.wallets {
-            addresses.push(address.clone());
+    pub fn get_addresses(&mut self) -> Vec<String> {
+        self.store.keys().expect("error getting keys from store")
+    }
+
+    pub fn get_wallet(&mut self, address: &str) -> Wallet {
+        for key in self.store.keys().expect("error getting keys from store") {
+            if key == address {
+                return match self.store.get(&key)
+                    .expect("error getting wallet from store") {
+                    Some(o) => match o {
+                        StoreValue::Wallet(wallet) => {
+                            Wallet::deserialize(wallet)
+                        }
+                        _ => panic!("wrong type returned from store, StoreValue::Block expected"),
+                    },
+                    None => panic!("error getting wallet from store"),
+                };
+            }
         }
-        addresses
-    }
 
-    pub fn get_wallet(&self, address: &str) -> &Wallet {
-        &self.wallets[address]
-    }
-
-    pub fn load_from_file(&mut self) {
-        if !Path::new(WALLET_FILE).exists() {
-            panic!("can't load wallets from file that doesn't exists");
-        }
-
-        let data = fs::read(WALLET_FILE).expect("error happened when reading from wallet file");
-        self.wallets = bincode::deserialize(&data).expect("error decerializing wallets from file");
-    }
-
-    pub fn save_to_file(&self) {
-        let data = bincode::serialize(&self).expect("error serializing wallets");
-        fs::write(WALLET_FILE, &data).expect("error writing serialized wallets to file");
+        panic!("no wallet with given address {} was found", address);
     }
 }
+

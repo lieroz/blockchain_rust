@@ -1,8 +1,5 @@
 use crypto::{digest::Digest, ripemd160::Ripemd160, sha2::Sha256};
-use ring::{
-    rand,
-    signature::{self, KeyPair},
-};
+use ring::{rand, signature::{self, KeyPair}};
 
 const VERSION: u8 = 0;
 pub const ADDRESS_CHECKSUM_LEN: usize = 4;
@@ -10,6 +7,7 @@ pub const ADDRESS_CHECKSUM_LEN: usize = 4;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Wallet {
     pkcs8_bytes: Vec<u8>,
+    public_key: Vec<u8>,
 }
 
 impl Wallet {
@@ -17,17 +15,17 @@ impl Wallet {
         let rng = rand::SystemRandom::new();
         let pkcs8_bytes =
             signature::Ed25519KeyPair::generate_pkcs8(&rng).expect("error generating pkcs8 bytes");
+        let key_pair = signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(pkcs8_bytes.as_ref()))
+            .expect("error casting bytes to key pair");
+        let peer_public_key_bytes = key_pair.public_key().as_ref();
         Wallet {
             pkcs8_bytes: pkcs8_bytes.as_ref().to_vec(),
+            public_key: peer_public_key_bytes.to_vec(),
         }
     }
 
     pub fn get_address(&self) -> String {
-        let key_pair = signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(
-            self.pkcs8_bytes.as_ref(),
-        ))
-        .expect("error getting key pair from bytes");
-        let pub_key_hash = Self::hash_pub_key(key_pair.public_key().as_ref());
+        let pub_key_hash = Self::hash_pub_key(&self.public_key[..]);
         let mut payload = vec![VERSION];
         payload.extend(pub_key_hash);
         let checksum = Self::checksum(&payload);
@@ -77,11 +75,19 @@ impl Wallet {
         checksum[..ADDRESS_CHECKSUM_LEN].to_vec()
     }
 
-    pub fn public_key(&self) -> Vec<u8> {
-        let key_pair = signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(
-            self.pkcs8_bytes.as_ref(),
-        ))
-        .expect("error getting key pair from bytes");
-        key_pair.public_key().as_ref().to_vec()
+    pub fn pkcs8_bytes(&self) -> &[u8] {
+        &self.pkcs8_bytes[..]
+    }
+
+    pub fn public_key(&self) -> &[u8] {
+        &self.public_key[..]
+    }
+
+    pub fn serialize(&self) -> Vec<u8> {
+        bincode::serialize(&self).expect("error serializing wallet")
+    }
+
+    pub fn deserialize(bytes: Vec<u8>) -> Wallet {
+        bincode::deserialize(&bytes[..]).expect("error decerializing wallet")
     }
 }

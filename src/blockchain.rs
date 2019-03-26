@@ -11,7 +11,7 @@ value!(
     }
 );
 
-const STORE_FILE: &str = "db.cab";
+const BLOCKCHAIN_FILE: &str = "blockchain.db";
 const TIP_KEY: &str = "l";
 const CHECK_KEY: &str = "check_key";
 const CHECK_VALUE: &str = "check_value";
@@ -35,7 +35,7 @@ impl Blockchain {
     }
 
     pub fn new() -> Blockchain {
-        let mut store = KV::<String, StoreValue>::new(STORE_FILE).expect("error opening store");
+        let mut store = KV::<String, StoreValue>::new(BLOCKCHAIN_FILE).expect("error opening blockchain store");
 
         if !Blockchain::exists(&mut store) {
             panic!("no existsing blockchain found")
@@ -56,7 +56,7 @@ impl Blockchain {
     }
 
     pub fn create(address: &str) -> Blockchain {
-        let mut store = KV::<String, StoreValue>::new(STORE_FILE).expect("error opening store");
+        let mut store = KV::<String, StoreValue>::new(BLOCKCHAIN_FILE).expect("error opening store");
 
         if Blockchain::exists(&mut store) {
             panic!("blockchain already exists")
@@ -91,6 +91,12 @@ impl Blockchain {
     }
 
     pub fn mine_block(&mut self, transactions: Vec<Transaction>) {
+        for tx in &transactions {
+            if !self.verify_transaction(tx) {
+                panic!("ERROR: Invalid transaction");
+            }
+        }
+
         let new_block = Block::new(transactions, &self.tip[..]);
         match self.store.insert(
             new_block.hash().to_string(),
@@ -116,7 +122,7 @@ impl Blockchain {
         }
     }
 
-    pub fn find_unspent_transactions(&mut self, address: &str) -> Vec<Transaction> {
+    pub fn find_unspent_transactions(&mut self, pub_key_hash: &[u8]) -> Vec<Transaction> {
         let mut unspent_txs: Vec<Transaction> = Vec::new();
         let mut spent_txos: HashMap<String, Vec<i32>> = HashMap::new();
 
@@ -131,14 +137,14 @@ impl Blockchain {
                         }
                     }
 
-                    if out_tx.can_be_unlocked(address) {
+                    if out_tx.is_locked_with_key(pub_key_hash) {
                         unspent_txs.push(tx.clone());
                     }
                 }
 
                 if !tx.is_coinbase() {
                     for in_tx in tx.v_in() {
-                        if in_tx.can_unlock_output(address) {
+                        if in_tx.uses_key(pub_key_hash) {
                             spent_txos
                                 .entry(in_tx.tx_id().to_string())
                                 .or_insert(Vec::new())
@@ -152,13 +158,13 @@ impl Blockchain {
         unspent_txs
     }
 
-    pub fn find_utxo(&mut self, address: &str) -> Vec<TXOutput> {
+    pub fn find_utxo(&mut self, pub_key_hash: &[u8]) -> Vec<TXOutput> {
         let mut unspent_txos: Vec<TXOutput> = Vec::new();
-        let unspent_txs = self.find_unspent_transactions(address);
+        let unspent_txs = self.find_unspent_transactions(pub_key_hash);
 
         for tx in unspent_txs {
             for out in tx.v_out() {
-                if out.can_be_unlocked(address) {
+                if out.is_locked_with_key(pub_key_hash) {
                     unspent_txos.push(out.clone());
                 }
             }
@@ -169,16 +175,16 @@ impl Blockchain {
 
     pub fn find_spendable_outputs(
         &mut self,
-        address: &str,
+        pub_key_hash: &[u8],
         amount: i32,
     ) -> (i32, HashMap<String, Vec<i32>>) {
         let mut unspent_outputs: HashMap<String, Vec<i32>> = HashMap::new();
-        let unspent_txs = self.find_unspent_transactions(address);
+        let unspent_txs = self.find_unspent_transactions(pub_key_hash);
         let mut accumulated = 0;
 
         'work: for tx in unspent_txs {
             for (idx, out) in tx.v_out().iter().enumerate() {
-                if out.can_be_unlocked(address) && accumulated < amount {
+                if out.is_locked_with_key(pub_key_hash) && accumulated < amount {
                     accumulated += out.value();
                     unspent_outputs
                         .entry(tx.id().to_string())
@@ -193,6 +199,40 @@ impl Blockchain {
         }
 
         (accumulated, unspent_outputs)
+    }
+
+    pub fn find_transaction(&mut self, id: &str) -> Transaction {
+        for block in self.iter() {
+            for tx in block.transactions() {
+                if tx.id() == id {
+                    return tx.clone()
+                }
+            }
+        }
+
+        panic!("Transaction is not found");
+    }
+
+    pub fn sign_transaction(&mut self, tx: &mut Transaction, pkcs8_bytes: &[u8]) {
+        let mut prev_txs = HashMap::new();
+
+        for tx_in in tx.v_in() {
+            let prev_tx = self.find_transaction(tx_in.tx_id());
+            prev_txs.insert(prev_tx.id().to_string(), prev_tx);
+        }
+
+        tx.sign(pkcs8_bytes, &prev_txs);
+    }
+
+    pub fn verify_transaction(&mut self, tx: &Transaction) -> bool {
+        let mut prev_txs = HashMap::new();
+
+        for tx_in in tx.v_in() {
+            let prev_tx = self.find_transaction(tx_in.tx_id());
+            prev_txs.insert(prev_tx.id().to_string(), prev_tx);
+        }
+
+        tx.verify(&prev_txs)
     }
 }
 
