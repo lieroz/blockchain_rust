@@ -1,5 +1,8 @@
 use crypto::{digest::Digest, ripemd160::Ripemd160, sha2::Sha256};
-use ring::{rand, signature::{self, KeyPair}};
+use ring::{
+    rand,
+    signature::{self, KeyPair},
+};
 
 const VERSION: u8 = 0;
 pub const ADDRESS_CHECKSUM_LEN: usize = 4;
@@ -15,8 +18,9 @@ impl Wallet {
         let rng = rand::SystemRandom::new();
         let pkcs8_bytes =
             signature::Ed25519KeyPair::generate_pkcs8(&rng).expect("error generating pkcs8 bytes");
-        let key_pair = signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(pkcs8_bytes.as_ref()))
-            .expect("error casting bytes to key pair");
+        let key_pair =
+            signature::Ed25519KeyPair::from_pkcs8(untrusted::Input::from(pkcs8_bytes.as_ref()))
+                .expect("error casting bytes to key pair");
         let peer_public_key_bytes = key_pair.public_key().as_ref();
         Wallet {
             pkcs8_bytes: pkcs8_bytes.as_ref().to_vec(),

@@ -1,10 +1,11 @@
 use crate::blockchain::Blockchain;
+use crate::utxo_set::UTXOSet;
 use crate::wallet::{self, Wallet};
 use crate::wallets::Wallets;
 
-use ring::signature;
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
+use ring::signature;
 use std::collections::HashMap;
 
 const SUBSIDY: i32 = 10;
@@ -34,13 +35,19 @@ impl Transaction {
         tx
     }
 
-    pub fn new_utxo_tx(from: &str, to: &str, amount: i32, bc: &mut Blockchain) -> Transaction {
+    pub fn new_utxo_tx(
+        from: &str,
+        to: &str,
+        amount: i32,
+        bc: &mut Blockchain,
+        utxo_set: &mut UTXOSet,
+    ) -> Transaction {
         let mut inputs = Vec::new();
         let mut outputs = Vec::new();
         let mut wallets = Wallets::new();
         let wallet = wallets.get_wallet(from);
         let pub_key_hash = Wallet::hash_pub_key(wallet.public_key());
-        let (acc, valid_outputs) = bc.find_spendable_outputs(&pub_key_hash[..], amount);
+        let (acc, valid_outputs) = utxo_set.find_spendable_outputs(&pub_key_hash[..], amount);
 
         if acc < amount {
             panic!("ERROR: Not enough funds")
@@ -76,7 +83,7 @@ impl Transaction {
 
     pub fn sign(&mut self, pkcs8_bytes: &[u8], prev_txs: &HashMap<String, Transaction>) {
         if self.is_coinbase() {
-            return
+            return;
         }
 
         for tx_in in self.v_in() {
@@ -109,14 +116,19 @@ impl Transaction {
         let mut outputs = Vec::new();
 
         for tx_in in self.v_in() {
-            inputs.push(TXInput::new(tx_in.tx_id(), tx_in.v_out(), Vec::new(), Vec::new()));
+            inputs.push(TXInput::new(
+                tx_in.tx_id(),
+                tx_in.v_out(),
+                Vec::new(),
+                Vec::new(),
+            ));
         }
 
         for tx_out in self.v_out() {
             outputs.push(tx_out.clone());
         }
 
-        Transaction{
+        Transaction {
             id: self.id.clone(),
             v_in: inputs,
             v_out: outputs,
@@ -125,7 +137,7 @@ impl Transaction {
 
     pub fn verify(&self, prev_txs: &HashMap<String, Transaction>) -> bool {
         if self.is_coinbase() {
-            return true
+            return true;
         }
 
         for tx_in in self.v_in() {
@@ -142,10 +154,12 @@ impl Transaction {
             tx_copy_in.set_pub_key(prev_tx.v_out()[tx_in.v_out() as usize].pub_key_hash());
             tx_copy.set_id();
 
-            match signature::verify(&signature::ED25519,
-                                    untrusted::Input::from(tx_in.pub_key()),
-                                    untrusted::Input::from(tx_copy.id().as_bytes()),
-                                    untrusted::Input::from(tx_in.signature())) {
+            match signature::verify(
+                &signature::ED25519,
+                untrusted::Input::from(tx_in.pub_key()),
+                untrusted::Input::from(tx_copy.id().as_bytes()),
+                untrusted::Input::from(tx_in.signature()),
+            ) {
                 Err(_) => return false,
                 _ => continue,
             }
@@ -159,6 +173,10 @@ impl Transaction {
         let data = bincode::serialize(&self).expect("error serializing transaction");
         hasher.input(&data);
         self.id = hasher.result_str()
+    }
+
+    pub fn serialize(&self) -> Vec<u8> {
+        bincode::serialize(&self).expect("error serializing Transaction")
     }
 
     pub fn id(&self) -> &str {
@@ -221,10 +239,7 @@ impl TXInput {
     pub fn uses_key(&self, pub_key_hash: &[u8]) -> bool {
         let locking_hash = Wallet::hash_pub_key(&self.public_key);
         locking_hash.len() == pub_key_hash.len()
-            && locking_hash
-                .iter()
-                .zip(pub_key_hash)
-                .all(|(a, b)| a == b)
+            && locking_hash.iter().zip(pub_key_hash).all(|(a, b)| a == b)
     }
 
     pub fn tx_id(&self) -> &str {
@@ -292,5 +307,24 @@ impl TXOutput {
 
     pub fn pub_key_hash(&self) -> &[u8] {
         &self.pub_key_hash
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct TXOutputs {
+    pub outputs: Vec<TXOutput>,
+}
+
+impl TXOutputs {
+    pub fn new(outputs: Vec<TXOutput>) -> TXOutputs {
+        TXOutputs { outputs }
+    }
+
+    pub fn serialize(&self) -> Vec<u8> {
+        bincode::serialize(&self).expect("error serializing TXOutputs")
+    }
+
+    pub fn deserialize(bytes: Vec<u8>) -> TXOutputs {
+        bincode::deserialize(&bytes[..]).expect("error decerializing TXOutputs")
     }
 }

@@ -7,8 +7,10 @@ extern crate serde;
 mod block;
 mod blockchain;
 mod cli;
+mod merkle_tree;
 mod proofofwork;
 mod transaction;
+mod utxo_set;
 mod wallet;
 mod wallets;
 
