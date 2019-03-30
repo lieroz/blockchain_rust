@@ -8,6 +8,11 @@ use crypto::sha2::Sha256;
 use ring::signature;
 use std::collections::HashMap;
 
+extern crate rand;
+
+use rand::seq::SliceRandom;
+use rand::thread_rng;
+
 const SUBSIDY: i32 = 10;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -22,7 +27,15 @@ impl Transaction {
         let mut data = String::from(data);
 
         if data.is_empty() {
-            data = format!("Reward to: {}", to);
+            const CHARSET: &[u8] =  b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+            abcdefghijklmnopqrstuvwxyz\
+            0123456789)(*&^%$#@!~";
+
+            let mut rng = thread_rng();
+            let password: Option<String> = (0..30)
+                .map(|_| Some(*CHARSET.choose(&mut rng)? as char))
+                .collect();
+            data = password.unwrap();
         }
 
         let mut tx = Transaction {
