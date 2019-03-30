@@ -1,8 +1,7 @@
+use crate::merkle_tree::MerkleTree;
 use crate::proofofwork::ProofOfWork;
 use crate::transaction::Transaction;
 
-use crypto::digest::Digest;
-use crypto::sha2::Sha256;
 use std::time::SystemTime;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -46,15 +45,14 @@ impl Block {
     }
 
     pub fn hash_transactions(&self) -> String {
-        let mut data = String::new();
+        let mut transactions: Vec<Vec<u8>> = Vec::new();
 
         for tx in &self.transactions {
-            data.push_str(tx.id());
+            transactions.push(tx.serialize());
         }
 
-        let mut hasher = Sha256::new();
-        hasher.input_str(&data[..]);
-        hasher.result_str()
+        let tree = MerkleTree::new(&mut transactions);
+        String::from_utf8_lossy(&tree.data()[..]).to_string()
     }
 
     pub fn timestamp(&self) -> u64 {
