@@ -120,8 +120,7 @@ impl<'a> CLI<'a> {
         let tx = Transaction::new_utxo_tx(from, to, amount, &mut bc, &mut utxo_set);
         let cbtx = Transaction::new_coin_base_tx(from, "");
         let block = bc.mine_block(vec![cbtx, tx]);
-        utxo_set.update(&block); // fix update method, cause now it works quite not like expected
-        utxo_set.reindex(&mut bc);
+        utxo_set.update(&block);
         println!("Success!");
     }
 

@@ -132,8 +132,8 @@ impl UTXOSet {
                     };
                     let mut updated_outs = TXOutputs::new(Vec::new());
 
-                    for out in outs.outputs {
-                        if !tx_in.uses_key(out.pub_key_hash()) {
+                    for (idx, out) in outs.outputs.iter().enumerate() {
+                        if idx as i32 != tx_in.v_out() {
                             updated_outs.outputs.push(out.clone());
                         }
                     }
