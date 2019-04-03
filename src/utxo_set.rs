@@ -14,16 +14,18 @@ value!(
     }
 );
 
-const UTXO_SET_FILE: &str = "utxo_set.db";
-
 pub struct UTXOSet {
     store: KV<String, StoreValue>,
 }
 
 impl UTXOSet {
-    pub fn new() -> UTXOSet {
+    pub fn get_store_name(node_id: &str) -> String {
+        format!("utxo_set_{}.db", node_id)
+    }
+
+    pub fn new(store_name: &'static str) -> UTXOSet {
         UTXOSet {
-            store: KV::<String, StoreValue>::new(UTXO_SET_FILE)
+            store: KV::<String, StoreValue>::new(store_name)
                 .expect("error opening utxo set store"),
         }
     }
@@ -93,13 +95,14 @@ impl UTXOSet {
         self.store.keys().unwrap().len()
     }
 
-    pub fn reindex(&mut self, bc: &mut Blockchain) {
-        if Path::new(UTXO_SET_FILE).exists() {
-            let _ = fs::remove_file(UTXO_SET_FILE);
+    pub fn reindex(&mut self, node_id: &str, bc: &mut Blockchain) {
+        let db_file = format!("utxo_set_{}.db", node_id);
+        if Path::new(&db_file).exists() {
+            let _ = fs::remove_file(&db_file);
         }
 
         self.store =
-            KV::<String, StoreValue>::new(UTXO_SET_FILE).expect("error opening utxo set store");
+            KV::<String, StoreValue>::new(&db_file).expect("error opening utxo set store");
         let utxo = bc.find_utxo();
 
         for (tx_id, outs) in utxo {

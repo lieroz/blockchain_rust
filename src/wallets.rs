@@ -9,16 +9,17 @@ value!(
     }
 );
 
-const WALLETS_FILE: &str = "wallets.db";
-
 pub struct Wallets {
     store: KV<String, StoreValue>,
 }
 
 impl Wallets {
-    pub fn new() -> Wallets {
-        let store =
-            KV::<String, StoreValue>::new(WALLETS_FILE).expect("error opening wallet store");
+    pub fn get_store_name(node_id: &str) -> String {
+        format!("utxo_set_{}.db", node_id)
+    }
+
+    pub fn new(store_name: &'static str) -> Wallets {
+        let store = KV::<String, StoreValue>::new(store_name).expect("error opening wallet store");
         Wallets { store }
     }
 

@@ -11,10 +11,11 @@ pub struct Block {
     prev_block_hash: String,
     hash: String,
     nonce: u64,
+    height: i32,
 }
 
 impl Block {
-    pub fn new(transactions: Vec<Transaction>, prev_block_hash: &str) -> Block {
+    pub fn new(transactions: Vec<Transaction>, prev_block_hash: &str, height: i32) -> Block {
         let timestamp = SystemTime::now()
             .duration_since(SystemTime::UNIX_EPOCH)
             .expect("SystemTime before UNIX EPOCH!");
@@ -24,6 +25,7 @@ impl Block {
             prev_block_hash: prev_block_hash.to_string(),
             hash: String::new(),
             nonce: 0,
+            height,
         };
         let pow = ProofOfWork::new(&block);
         let (nonce, hash) = pow.run();
@@ -33,7 +35,7 @@ impl Block {
     }
 
     pub fn new_genesis_block(coinbase: Transaction) -> Block {
-        Block::new(vec![coinbase], "")
+        Block::new(vec![coinbase], "", 0)
     }
 
     pub fn serialize(&self) -> Vec<u8> {
@@ -73,5 +75,9 @@ impl Block {
 
     pub fn nonce(&self) -> u64 {
         self.nonce
+    }
+
+    pub fn height(&self) -> i32 {
+        self.height
     }
 }

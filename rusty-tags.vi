@@ -2327,6 +2327,7 @@ add	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2
 add	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn add(self, _rhs: GePrecomp) -> GeP1P1 {$/;"	P	implementation:GeP3
 add	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/simd.rs	/^        fn add(self, rhs: u32x4) -> u32x4 {$/;"	P	implementation:fake::u32x4
 add	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/simd.rs	/^        fn add(self, rhs: u64x2) -> u64x2 {$/;"	P	implementation:fake::u64x2
+add_block	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn add_block(&mut self, block: &Block) {$/;"	P	implementation:Blockchain
 add_bytes_to_bits	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub fn add_bytes_to_bits(bits: u64, bytes: u64) -> u64 {$/;"	f
 add_bytes_to_bits_tuple	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^pub fn add_bytes_to_bits_tuple$/;"	f
 add_ctr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^fn add_ctr(ctr: &mut [u8], mut ammount: u8) {$/;"	f
@@ -2854,10 +2855,10 @@ cpu	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src
 cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead.rs	/^    cpu_features: cpu::Features,$/;"	m	struct:Key
 cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/aes.rs	/^    cpu_features: cpu::Features,$/;"	m	struct:Key
 cpu_features	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^    cpu_features: cpu::Features,$/;"	m	struct:Context
-create	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn create(address: &str) -> Blockchain {$/;"	P	implementation:Blockchain
-create_blockchain	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_blockchain(&self, address: &str) {$/;"	P	implementation:CLI
+create	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn create(address: &str, node_id: &str) -> Blockchain {$/;"	P	implementation:Blockchain
+create_blockchain	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_blockchain(&self, node_id: &str, address: &str) {$/;"	P	implementation:CLI
 create_keys	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hmac.rs	/^fn create_keys<D: Digest>(digest: &mut D, key: &[u8]) -> (Vec<u8>, Vec<u8>) {$/;"	f
-create_wallet	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_wallet(&self) {$/;"	P	implementation:CLI
+create_wallet	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn create_wallet(&self, node_id: &str) {$/;"	P	implementation:CLI
 create_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn create_wallet(&mut self) -> String {$/;"	P	implementation:Wallets
 cryptoutil	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^mod cryptoutil;$/;"	n
 ctr	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes.rs	/^        ctr: Vec<u8>,$/;"	m	struct:test::CtrTest
@@ -3038,6 +3039,7 @@ deserialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_d
 deserialize	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    deserialize: String,$/;"	m	struct:Name
 deserialize	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> Block {$/;"	P	implementation:Block
 deserialize	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> TXOutputs {$/;"	P	implementation:TXOutputs
+deserialize	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> Transaction {$/;"	P	implementation:Transaction
 deserialize	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn deserialize(bytes: Vec<u8>) -> Wallet {$/;"	P	implementation:Wallet
 deserialize_adjacently_tagged_enum	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/de.rs	/^fn deserialize_adjacently_tagged_enum($/;"	f
 deserialize_aliases	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    deserialize_aliases: Vec<String>,$/;"	m	struct:Name
@@ -3771,7 +3773,10 @@ get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/typedb-0.8.0/sr
 get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn get(&self, i: usize) -> Option<&u8> { self.bytes.get(i) }$/;"	P	implementation:no_panic::Slice
 get_address	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn get_address(&self) -> String {$/;"	P	implementation:Wallet
 get_addresses	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_addresses(&mut self) -> Vec<String> {$/;"	P	implementation:Wallets
-get_balance	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn get_balance(&self, address: &str) {$/;"	P	implementation:CLI
+get_balance	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn get_balance(&self, node_id: &str, address: &str) {$/;"	P	implementation:CLI
+get_best_height	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_best_height(&self) -> i32 {$/;"	P	implementation:Blockchain
+get_block	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_block(&self, block_hash: &str) -> Block {$/;"	P	implementation:Blockchain
+get_block_hashes	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_block_hashes(&mut self) -> Vec<String> {$/;"	P	implementation:Blockchain
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	P	implementation:SliceReader
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	f
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>>;$/;"	P	interface:BincodeRead
@@ -3793,6 +3798,8 @@ get_renames	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_d
 get_ser_and_de	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^fn get_ser_and_de<'a, 'b, T, F>($/;"	f
 get_serde_meta_items	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^pub fn get_serde_meta_items(attr: &syn::Attribute) -> Option<Vec<syn::NestedMeta>> {$/;"	f
 get_slice	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn get_slice(&self, r: core::ops::Range<usize>)$/;"	P	implementation:no_panic::Slice
+get_store_name	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn get_store_name(node_id: &str) -> String {$/;"	P	implementation:UTXOSet
+get_store_name	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_store_name(node_id: &str) -> String {$/;"	P	implementation:Wallets
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^    fn get_test_vectors()-> [TestVector; 5]{$/;"	f	module:test
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^  fn get_test_vectors()-> Vec<TestVector>{$/;"	f	module:test
 get_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_wallet(&mut self, address: &str) -> Wallet {$/;"	P	implementation:Wallets
@@ -3842,6 +3849,8 @@ hc128_10	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypt
 hc128_1k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    pub fn hc128_1k(bh: & mut Bencher) {$/;"	f	module:bench
 hc128_64k	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hc128.rs	/^    pub fn hc128_64k(bh: & mut Bencher) {$/;"	f	module:bench
 hchacha20	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    fn hchacha20(&mut self, out: &mut [u8]) -> () {$/;"	P	implementation:ChaCha20
+height	/home/lieroz/blockchain_rust/src/block.rs	/^    height: i32,$/;"	m	struct:Block
+height	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn height(&self) -> i32 {$/;"	P	implementation:Block
 helper	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/private/de.rs	/^    fn helper(bounds: (usize, Option<usize>)) -> Option<usize> {$/;"	f	module:size_hint
 hex_to_bytes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^    fn hex_to_bytes(raw_hex: &str) -> Vec<u8> {$/;"	f	module:test
 hi	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^    hi: u64,$/;"	m	struct:u128
@@ -4257,7 +4266,7 @@ limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2
 limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/internal.rs	/^    fn limit(&self) -> Option<u64> {$/;"	P	implementation:Infinite
 limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/internal.rs	/^    fn limit(&self) -> Option<u64>;$/;"	P	interface:SizeLimit
 linux_setup	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/cpu.rs	/^    pub fn linux_setup() {$/;"	f	module:arm
-list_addresses	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn list_addresses(&self) {$/;"	P	implementation:CLI
+list_addresses	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn list_addresses(&self, node_id: &str) {$/;"	P	implementation:CLI
 little_endian	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/config.rs	/^    pub fn little_endian(&mut self) -> &mut Self {$/;"	P	implementation:Config
 lo	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^    lo: u64,$/;"	m	struct:u128
 load_3i	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^fn load_3i(s: &[u8]) -> i64 {$/;"	f
@@ -4541,8 +4550,8 @@ new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/typedb-0.8.0/src/lib.rs	/^    pub fn new(p: &'static str) -> Result<KV<K, V>, PersyError> {$/;"	f
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn new(bytes: &'a [u8]) -> Slice<'a> {$/;"	P	implementation:no_panic::Slice
 new	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^    pub fn new(input: Input<'a>) -> Reader<'a> {$/;"	P	implementation:Reader
-new	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new(transactions: Vec<Transaction>, prev_block_hash: &str) -> Block {$/;"	P	implementation:Block
-new	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn new() -> Blockchain {$/;"	P	implementation:Blockchain
+new	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn new(transactions: Vec<Transaction>, prev_block_hash: &str, height: i32) -> Block {$/;"	P	implementation:Block
+new	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn new(node_id: &str) -> Blockchain {$/;"	P	implementation:Blockchain
 new	/home/lieroz/blockchain_rust/src/cli.rs	/^    pub fn new(args: &'a [String]) -> CLI<'a> {$/;"	P	implementation:CLI
 new	/home/lieroz/blockchain_rust/src/merkle_tree.rs	/^    pub fn new($/;"	P	implementation:MerkleNode
 new	/home/lieroz/blockchain_rust/src/merkle_tree.rs	/^    pub fn new(data: &mut Vec<Vec<u8>>) -> MerkleTree {$/;"	P	implementation:MerkleTree
@@ -4550,9 +4559,9 @@ new	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn new(block: &Blo
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(amount: i32, address: &str) -> TXOutput {$/;"	P	implementation:TXOutput
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(outputs: Vec<TXOutput>) -> TXOutputs {$/;"	P	implementation:TXOutputs
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(tx_id: &str, v_out: i32, signature: Vec<u8>, public_key: Vec<u8>) -> TXInput {$/;"	P	implementation:TXInput
-new	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn new() -> UTXOSet {$/;"	P	implementation:UTXOSet
+new	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn new(store_name: &'static str) -> UTXOSet {$/;"	P	implementation:UTXOSet
 new	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn new() -> Wallet {$/;"	P	implementation:Wallet
-new	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn new() -> Wallets {$/;"	P	implementation:Wallets
+new	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn new(store_name: &'static str) -> Wallets {$/;"	P	implementation:Wallets
 newRR	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/bigint.rs	/^    fn newRR(m: &PartialModulus<M>, m_bits: bits::BitLength) -> One<M, RR> {$/;"	P	implementation:One
 new_and_fill	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/entropy.rs	/^    fn new_and_fill(dest: &mut [u8]) -> Result<Self, Error> {$/;"	P	implementation:Jitter
 new_and_fill	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/entropy.rs	/^    fn new_and_fill(dest: &mut [u8]) -> Result<Self, Error> {$/;"	P	implementation:NoSource
@@ -4991,7 +5000,7 @@ prev_block_hash	/home/lieroz/blockchain_rust/src/block.rs	/^    pub fn prev_bloc
 primitive	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/signature.rs	/^pub mod primitive {$/;"	n
 primitive_deserializer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/value.rs	/^macro_rules! primitive_deserializer {$/;"	M
 primitive_impl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/ser/impls.rs	/^macro_rules! primitive_impl {$/;"	M
-print_chain	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn print_chain(&self) {$/;"	P	implementation:CLI
+print_chain	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn print_chain(&self, node_id: &str) {$/;"	P	implementation:CLI
 print_usage	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn print_usage(&self) {$/;"	P	implementation:CLI
 private	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/value.rs	/^mod private {$/;"	n
 private	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/lib.rs	/^pub mod private;$/;"	n
@@ -5122,8 +5131,8 @@ reader	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/s
 recommended_key_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/hmac.rs	/^pub fn recommended_key_len(digest_alg: &digest::Algorithm) -> usize { digest_alg.chaining_len }$/;"	f
 register_fork_handler	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/adapter/reseeding.rs	/^    pub fn register_fork_handler() {$/;"	f	module:fork
 register_fork_handler	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/adapter/reseeding.rs	/^    pub fn register_fork_handler() {}$/;"	f	module:fork
-reindex	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn reindex(&mut self, bc: &mut Blockchain) {$/;"	P	implementation:UTXOSet
-reindex_utxo	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn reindex_utxo(&self) {$/;"	P	implementation:CLI
+reindex	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn reindex(&mut self, node_id: &str, bc: &mut Blockchain) {$/;"	P	implementation:UTXOSet
+reindex_utxo	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn reindex_utxo(&self, node_id: &str) {$/;"	P	implementation:CLI
 relevant_type_params	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/bound.rs	/^        relevant_type_params: HashSet<syn::Ident>,$/;"	m	struct:with_bound::FindTyParams
 remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn remaining(&self) -> usize { self.buff.len() - self.pos }$/;"	P	implementation:RefReadBuffer
 remaining	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/buffer.rs	/^    fn remaining(&self) -> usize { self.len - self.pos }$/;"	P	implementation:BorrowedWriteBuffer
@@ -5422,7 +5431,7 @@ seed_from_u64	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand_
 select	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    pub fn select(pos: usize, b: i8) -> GePrecomp {$/;"	P	implementation:GePrecomp
 self_var	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/ser.rs	/^    self_var: Ident,$/;"	m	struct:Parameters
 semantics	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/bssl.rs	/^        fn semantics() {$/;"	f	module:tests::result
-send	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn send(&self, from: &str, to: &str, amount: i32) {$/;"	P	implementation:CLI
+send	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn send(&self, node_id: &str, from: &str, to: &str, amount: i32) {$/;"	P	implementation:CLI
 seq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/lib.rs	/^pub mod seq;$/;"	n
 seq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/value.rs	/^    seq: A,$/;"	m	struct:SeqAccessDeserializer
 seq_impl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/impls.rs	/^macro_rules! seq_impl {$/;"	M
@@ -5878,6 +5887,7 @@ square_and_double	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/r
 square_by_mul	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn square_by_mul() {$/;"	f	module:tests
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, func: F);$/;"	P	interface:StandardPadding
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, mut func: F) {$/;"	P	implementation:T
+start_node	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn start_node(&self, node_id: &str) {$/;"	P	implementation:CLI
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/digest.rs	/^    state: State,$/;"	m	struct:Context
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    state: BlockEngineState$/;"	m	struct:BlockEngine
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    state  : ChaChaState,$/;"	m	struct:ChaCha20
