@@ -14,12 +14,9 @@ pub struct Wallets {
 }
 
 impl Wallets {
-    pub fn get_store_name(node_id: &str) -> String {
-        format!("utxo_set_{}.db", node_id)
-    }
-
-    pub fn new(store_name: &'static str) -> Wallets {
-        let store = KV::<String, StoreValue>::new(store_name).expect("error opening wallet store");
+    pub fn new(node_id: &str) -> Wallets {
+        let db_file = Box::leak(Box::new(format!("wallets_{}.db", node_id)));
+        let store = KV::<String, StoreValue>::new(db_file).expect("error opening wallet store");
         Wallets { store }
     }
 

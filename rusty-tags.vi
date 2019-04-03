@@ -3774,8 +3774,8 @@ get	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2
 get_address	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn get_address(&self) -> String {$/;"	P	implementation:Wallet
 get_addresses	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_addresses(&mut self) -> Vec<String> {$/;"	P	implementation:Wallets
 get_balance	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn get_balance(&self, node_id: &str, address: &str) {$/;"	P	implementation:CLI
-get_best_height	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_best_height(&self) -> i32 {$/;"	P	implementation:Blockchain
-get_block	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_block(&self, block_hash: &str) -> Block {$/;"	P	implementation:Blockchain
+get_best_height	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_best_height(&mut self) -> i32 {$/;"	P	implementation:Blockchain
+get_block	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_block(&mut self, block_hash: &str) -> Block {$/;"	P	implementation:Blockchain
 get_block_hashes	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn get_block_hashes(&mut self) -> Vec<String> {$/;"	P	implementation:Blockchain
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	P	implementation:SliceReader
 get_byte_buffer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/de/read.rs	/^    fn get_byte_buffer(&mut self, length: usize) -> Result<Vec<u8>> {$/;"	f
@@ -3798,8 +3798,6 @@ get_renames	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_d
 get_ser_and_de	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^fn get_ser_and_de<'a, 'b, T, F>($/;"	f
 get_serde_meta_items	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^pub fn get_serde_meta_items(attr: &syn::Attribute) -> Option<Vec<syn::NestedMeta>> {$/;"	f
 get_slice	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^        pub fn get_slice(&self, r: core::ops::Range<usize>)$/;"	P	implementation:no_panic::Slice
-get_store_name	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn get_store_name(node_id: &str) -> String {$/;"	P	implementation:UTXOSet
-get_store_name	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_store_name(node_id: &str) -> String {$/;"	P	implementation:Wallets
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aes_gcm.rs	/^    fn get_test_vectors()-> [TestVector; 5]{$/;"	f	module:test
 get_test_vectors	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20poly1305.rs	/^  fn get_test_vectors()-> Vec<TestVector>{$/;"	f	module:test
 get_wallet	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn get_wallet(&mut self, address: &str) -> Wallet {$/;"	P	implementation:Wallets
@@ -4559,9 +4557,9 @@ new	/home/lieroz/blockchain_rust/src/proofofwork.rs	/^    pub fn new(block: &Blo
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(amount: i32, address: &str) -> TXOutput {$/;"	P	implementation:TXOutput
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(outputs: Vec<TXOutput>) -> TXOutputs {$/;"	P	implementation:TXOutputs
 new	/home/lieroz/blockchain_rust/src/transaction.rs	/^    pub fn new(tx_id: &str, v_out: i32, signature: Vec<u8>, public_key: Vec<u8>) -> TXInput {$/;"	P	implementation:TXInput
-new	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn new(store_name: &'static str) -> UTXOSet {$/;"	P	implementation:UTXOSet
+new	/home/lieroz/blockchain_rust/src/utxo_set.rs	/^    pub fn new(node_id: &str) -> UTXOSet {$/;"	P	implementation:UTXOSet
 new	/home/lieroz/blockchain_rust/src/wallet.rs	/^    pub fn new() -> Wallet {$/;"	P	implementation:Wallet
-new	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn new(store_name: &'static str) -> Wallets {$/;"	P	implementation:Wallets
+new	/home/lieroz/blockchain_rust/src/wallets.rs	/^    pub fn new(node_id: &str) -> Wallets {$/;"	P	implementation:Wallets
 newRR	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/bigint.rs	/^    fn newRR(m: &PartialModulus<M>, m_bits: bits::BitLength) -> One<M, RR> {$/;"	P	implementation:One
 new_and_fill	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/entropy.rs	/^    fn new_and_fill(dest: &mut [u8]) -> Result<Self, Error> {$/;"	P	implementation:Jitter
 new_and_fill	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/rngs/entropy.rs	/^    fn new_and_fill(dest: &mut [u8]) -> Result<Self, Error> {$/;"	P	implementation:NoSource
@@ -5887,7 +5885,7 @@ square_and_double	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/r
 square_by_mul	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn square_by_mul() {$/;"	f	module:tests
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, func: F);$/;"	P	interface:StandardPadding
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, mut func: F) {$/;"	P	implementation:T
-start_node	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn start_node(&self, node_id: &str) {$/;"	P	implementation:CLI
+start_node	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn start_node(&self, node_id: &str, miner_address: &str) {$/;"	P	implementation:CLI
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/digest.rs	/^    state: State,$/;"	m	struct:Context
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    state: BlockEngineState$/;"	m	struct:BlockEngine
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^    state  : ChaChaState,$/;"	m	struct:ChaCha20

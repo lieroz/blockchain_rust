@@ -127,7 +127,16 @@ impl<'a> CLI<'a> {
         println!("Success!");
     }
 
-    fn start_node(&self, node_id: &str) {
+    fn start_node(&self, node_id: &str, miner_address: &str) {
+        println!("Starting node {}", node_id);
+        if !miner_address.is_empty() {
+            if Wallet::validate_address(miner_address) {
+                println!("Mining is on. Address to receive rewards: {}", miner_address);
+            } else {
+                panic!("Wrong miner address!");
+            }
+        }
+        // TODO: start_server here
     }
 
     pub fn run(&self) {
@@ -142,7 +151,7 @@ impl<'a> CLI<'a> {
             },
             "createwallet" => self.create_wallet(&node_id),
             "getbalance" => match self.args[2].as_ref() {
-                "-address" => self.get_balance(&node_id, &self.args[3][..]),
+                "-address" => self.get_balance(&node_id, &self.args[3]),
                 _ => panic!("invalid argument to command"),
             },
             "listaddresses" => self.list_addresses(&node_id),
@@ -153,8 +162,8 @@ impl<'a> CLI<'a> {
                     "-to" => match self.args[6].as_ref() {
                         "-amount" => self.send(
                             &node_id,
-                            &self.args[3][..],
-                            &self.args[5][..],
+                            &self.args[3],
+                            &self.args[5],
                             self.args[7].parse::<i32>().unwrap(),
                         ),
                         _ => self.print_usage(),
@@ -163,7 +172,10 @@ impl<'a> CLI<'a> {
                 },
                 _ => self.print_usage(),
             },
-            "startnode" => self.start_node(&node_id),
+            "startnode" => match self.args[2].as_ref() {
+                "-miner" => self.start_node(&node_id, &self.args[3]),
+                _ => self.print_usage(),
+            },
             _ => self.print_usage(),
         }
     }

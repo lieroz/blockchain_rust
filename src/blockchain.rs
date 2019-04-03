@@ -34,9 +34,9 @@ impl Blockchain {
     }
 
     pub fn new(node_id: &str) -> Blockchain {
-        let db_file = format!("blockchain_{}.db", node_id);
+        let db_file = Box::leak(Box::new(format!("blockchain_{}.db", node_id)));
         let mut store =
-            KV::<String, StoreValue>::new(&db_file).expect("error opening blockchain store");
+            KV::<String, StoreValue>::new(db_file).expect("error opening blockchain store");
 
         if !Blockchain::exists(&mut store) {
             panic!("no existsing blockchain found")
@@ -57,8 +57,8 @@ impl Blockchain {
     }
 
     pub fn create(address: &str, node_id: &str) -> Blockchain {
-        let db_file = format!("blockchain_{}.db", node_id);
-        let mut store = KV::<String, StoreValue>::new(&db_file).expect("error opening store");
+        let db_file = Box::leak(Box::new(format!("blockchain_{}.db", node_id)));
+        let mut store = KV::<String, StoreValue>::new(db_file).expect("error opening store");
 
         if Blockchain::exists(&mut store) {
             panic!("blockchain already exists")
@@ -93,16 +93,13 @@ impl Blockchain {
     }
 
     pub fn add_block(&mut self, block: &Block) {
-        let block_in_db = match self
+        match self
             .store
             .get(&block.hash().to_string())
             .expect("error while extracting Block from store")
         {
-            Some(o) => match o {
-                StoreValue::Block(b) => b,
-                _ => panic!("wrong type returned from store, StoreValue::Block was expected"),
-            },
             None => return,
+            _ => (),
         };
         match self.store.insert(
             block.hash().to_string(),
@@ -147,7 +144,7 @@ impl Blockchain {
         }
     }
 
-    pub fn get_best_height(&self) -> i32 {
+    pub fn get_best_height(&mut self) -> i32 {
         match self
             .store
             .get(&self.tip)
@@ -161,7 +158,7 @@ impl Blockchain {
         }
     }
 
-    pub fn get_block(&self, block_hash: &str) -> Block {
+    pub fn get_block(&mut self, block_hash: &str) -> Block {
         match self
             .store
             .get(&block_hash.to_string())
@@ -192,7 +189,8 @@ impl Blockchain {
             }
         }
 
-        let new_block = Block::new(transactions, &self.tip[..], self.get_best_height() + 1);
+        let height = self.get_best_height();
+        let new_block = Block::new(transactions, &self.tip[..], height + 1);
         match self.store.insert(
             new_block.hash().to_string(),
             StoreValue::Block(new_block.serialize()),
