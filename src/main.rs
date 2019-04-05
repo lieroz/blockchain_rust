@@ -13,12 +13,16 @@ mod transaction;
 mod utxo_set;
 mod wallet;
 mod wallets;
+mod server;
 
 use cli::CLI;
+use server::Server;
 
 use std::env;
 
 fn main() {
+    Server::start("3001", "asdf");
+
     let args: Vec<String> = env::args().collect();
     let cli = CLI::new(&args);
     cli.run();
