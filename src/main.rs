@@ -9,11 +9,11 @@ mod blockchain;
 mod cli;
 mod merkle_tree;
 mod proofofwork;
+mod server;
 mod transaction;
 mod utxo_set;
 mod wallet;
 mod wallets;
-mod server;
 
 use cli::CLI;
 use server::Server;

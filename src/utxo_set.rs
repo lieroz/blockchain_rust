@@ -22,8 +22,7 @@ impl UTXOSet {
     pub fn new(node_id: &str) -> UTXOSet {
         let db_file = Box::leak(Box::new(format!("utxo_set_{}.db", node_id)));
         UTXOSet {
-            store: KV::<String, StoreValue>::new(db_file)
-                .expect("error opening utxo set store"),
+            store: KV::<String, StoreValue>::new(db_file).expect("error opening utxo set store"),
         }
     }
 
@@ -98,8 +97,7 @@ impl UTXOSet {
             let _ = fs::remove_file(&db_file);
         }
 
-        self.store =
-            KV::<String, StoreValue>::new(db_file).expect("error opening utxo set store");
+        self.store = KV::<String, StoreValue>::new(db_file).expect("error opening utxo set store");
         let utxo = bc.find_utxo();
 
         for (tx_id, outs) in utxo {

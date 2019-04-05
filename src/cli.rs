@@ -131,7 +131,10 @@ impl<'a> CLI<'a> {
         println!("Starting node {}", node_id);
         if !miner_address.is_empty() {
             if Wallet::validate_address(miner_address) {
-                println!("Mining is on. Address to receive rewards: {}", miner_address);
+                println!(
+                    "Mining is on. Address to receive rewards: {}",
+                    miner_address
+                );
             } else {
                 panic!("Wrong miner address!");
             }
@@ -141,8 +144,7 @@ impl<'a> CLI<'a> {
 
     pub fn run(&self) {
         self.validate_args();
-        let node_id = std::env::var("NODE_ID")
-            .expect("error reading NODE_ID from env");
+        let node_id = std::env::var("NODE_ID").expect("error reading NODE_ID from env");
 
         match self.args[1].as_ref() {
             "createblockchain" => match self.args[2].as_ref() {
