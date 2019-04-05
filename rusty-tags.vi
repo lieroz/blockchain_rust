@@ -1781,6 +1781,8 @@ Serializer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-
 Serializer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/ser/mod.rs	/^pub(crate) struct Serializer<W, O: Options> {$/;"	s
 Serializer	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/ser/mod.rs	/^pub trait Serializer: Sized {$/;"	i
 SerializerAcceptor	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/lib.rs	/^pub trait SerializerAcceptor {$/;"	i
+Server	/home/lieroz/blockchain_rust/src/server.rs	/^impl Server {$/;"	c
+Server	/home/lieroz/blockchain_rust/src/server.rs	/^pub struct Server {$/;"	s
 Sha1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/api.rs	/^    Sha1,$/;"	e	enum:DigestSpec
 Sha1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha1.rs	/^impl Digest for Sha1 {$/;"	c
 Sha1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha1.rs	/^impl Sha1 {$/;"	c
@@ -2585,6 +2587,7 @@ blockchain	/home/lieroz/blockchain_rust/src/main.rs	/^mod blockchain;$/;"	n
 blockmodes	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod blockmodes;$/;"	n
 blocks	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/poly1305.rs	/^    fn blocks(&self, state: &mut Opaque, data: &[u8], should_pad: Pad) {$/;"	P	implementation:Funcs
 blocks_fn	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/poly1305.rs	/^    blocks_fn:$/;"	m	struct:Funcs
+blocks_in_transit	/home/lieroz/blockchain_rust/src/server.rs	/^    blocks_in_transit: Vec<Vec<u8>>,$/;"	m	struct:Server
 blowfish	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blowfish.rs	/^    fn blowfish(bh: &mut Bencher) {$/;"	f	module:bench
 blowfish	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/lib.rs	/^pub mod blowfish;$/;"	n
 bool	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/distributions/utils.rs	/^impl BoolAsSIMD for bool {$/;"	c
@@ -3828,6 +3831,14 @@ h	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.3
 h_len	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/padding.rs	/^    h_len: usize,$/;"	m	struct:PSSMetrics
 half_rounded_up	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/bits.rs	/^    pub fn half_rounded_up(&self) -> BitLength {$/;"	P	implementation:BitLength
 half_used	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand_core-0.4.0/src/block.rs	/^    half_used: bool, \/\/ true if only half of the previous result is used$/;"	m	struct:BlockRng64
+handle_addr	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_addr() {$/;"	P	implementation:Server
+handle_block	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_block() {$/;"	P	implementation:Server
+handle_connection	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_connection(&self, mut stream: TcpStream) {$/;"	P	implementation:Server
+handle_get_blocks	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_get_blocks() {$/;"	P	implementation:Server
+handle_get_data	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_get_data() {$/;"	P	implementation:Server
+handle_inv	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_inv() {$/;"	P	implementation:Server
+handle_tx	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_tx() {$/;"	P	implementation:Server
+handle_version	/home/lieroz/blockchain_rust/src/server.rs	/^    fn handle_version() {$/;"	P	implementation:Server
 has_avx_movbe	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/aead/gcm.rs	/^fn has_avx_movbe(cpu_features: cpu::Features) -> bool {$/;"	f
 has_flatten	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    has_flatten: bool,$/;"	m	struct:Container
 has_flatten	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    pub fn has_flatten(&self) -> bool {$/;"	P	implementation:Container
@@ -4189,6 +4200,7 @@ keys	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/typedb-0.8.0/s
 keystream	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            keystream: Vec<u8>,$/;"	m	struct:test::test_chacha20_256_tls_vectors::TestVector
 keystream	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/chacha20.rs	/^            keystream: Vec<u8>,$/;"	m	struct:test::test_chacha20_256_tls_vectors_96_nonce::TestVector
 kind	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand_core-0.4.0/src/error.rs	/^    pub kind: ErrorKind,$/;"	m	struct:Error
+known_nodes	/home/lieroz/blockchain_rust/src/server.rs	/^    known_nodes: Vec<String>,$/;"	m	struct:Server
 l	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/hkdf.rs	/^        l: usize,$/;"	m	struct:test::TestVector
 lambda	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/distributions/poisson.rs	/^    lambda: f64,$/;"	m	struct:Poisson
 lambda_inverse	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/distributions/exponential.rs	/^    lambda_inverse: f64$/;"	m	struct:Exp
@@ -4344,6 +4356,7 @@ median	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/s
 median	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/distributions/cauchy.rs	/^    median: f64,$/;"	m	struct:Cauchy
 member	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/ast.rs	/^    pub member: syn::Member,$/;"	m	struct:Field
 member_message	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/check.rs	/^fn member_message(member: &Member) -> String {$/;"	f
+mempool	/home/lieroz/blockchain_rust/src/server.rs	/^    mempool: HashMap<String, Transaction>,$/;"	m	struct:Server
 merkle_tree	/home/lieroz/blockchain_rust/src/main.rs	/^mod merkle_tree;$/;"	n
 mgf1	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/padding.rs	/^fn mgf1($/;"	f
 middle_err	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/test.rs	/^    fn middle_err() { err_one(1) }$/;"	f	module:tests
@@ -4352,6 +4365,7 @@ min	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/
 min_bits	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa.rs	/^    min_bits: bits::BitLength,$/;"	m	struct:Parameters
 mine_block	/home/lieroz/blockchain_rust/src/blockchain.rs	/^    pub fn mine_block(&mut self, transactions: Vec<Transaction>) -> Block {$/;"	P	implementation:Blockchain
 minimal_width_from_unpadded	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/rsa/bigint.rs	/^    fn minimal_width_from_unpadded(limbs: &[Limb]) -> Self {$/;"	P	implementation:BoxedLimbs
+mining_address	/home/lieroz/blockchain_rust/src/server.rs	/^    mining_address: String,$/;"	m	struct:Server
 missing_field	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/private/de.rs	/^pub fn missing_field<'de, V, E>(field: &'static str) -> Result<V, E>$/;"	f
 mix_columns	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn mix_columns(self) -> Bs8State<T> {$/;"	P	implementation:Bs8State
 mix_columns	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/aessafe.rs	/^    fn mix_columns(self) -> Self;$/;"	P	interface:AesOps
@@ -4698,6 +4712,7 @@ next_value_seed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ser
 next_value_seed	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/private/de.rs	/^    fn next_value_seed<T>(&mut self, seed: T) -> Result<T::Value, Self::Error>$/;"	f
 no_limit	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/config.rs	/^    pub fn no_limit(&mut self) -> &mut Self {$/;"	P	implementation:Config
 no_panic	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/untrusted-0.6.2/src/untrusted.rs	/^mod no_panic {$/;"	n
+node_address	/home/lieroz/blockchain_rust/src/server.rs	/^    node_address: String,$/;"	m	struct:Server
 node_depth	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    node_depth: u8,$/;"	m	struct:Blake2bParam
 node_depth	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2s.rs	/^    node_depth: u8,$/;"	m	struct:Blake2sParam
 node_offset	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blake2b.rs	/^    node_offset: u64,$/;"	m	struct:Blake2bParam
@@ -5430,6 +5445,13 @@ select	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-
 self_var	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/ser.rs	/^    self_var: Ident,$/;"	m	struct:Parameters
 semantics	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/bssl.rs	/^        fn semantics() {$/;"	f	module:tests::result
 send	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn send(&self, node_id: &str, from: &str, to: &str, amount: i32) {$/;"	P	implementation:CLI
+send_addr	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_addr(&self, address: &str) {$/;"	P	implementation:Server
+send_block	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_block() {$/;"	P	implementation:Server
+send_data	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_data(&self, address: &str, request: &[u8]) {$/;"	P	implementation:Server
+send_get_data	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_get_data() {$/;"	P	implementation:Server
+send_inv	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_inv() {$/;"	P	implementation:Server
+send_tx	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_tx() {$/;"	P	implementation:Server
+send_version	/home/lieroz/blockchain_rust/src/server.rs	/^    fn send_version() {$/;"	P	implementation:Server
 seq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.6.5/src/lib.rs	/^pub mod seq;$/;"	n
 seq	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/value.rs	/^    seq: A,$/;"	m	struct:SeqAccessDeserializer
 seq_impl	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde-1.0.89/src/de/impls.rs	/^macro_rules! seq_impl {$/;"	M
@@ -5696,6 +5718,7 @@ serialize_with	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serd
 serialized_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/config.rs	/^    pub fn serialized_size<T: ?Sized + serde::Serialize>(&self, t: &T) -> Result<u64> {$/;"	P	implementation:Config
 serialized_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/internal.rs	/^pub(crate) fn serialized_size<T: ?Sized, O: Options>(value: &T, mut options: O) -> Result<u64>$/;"	f
 serialized_size	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/bincode-1.1.2/src/lib.rs	/^pub fn serialized_size<T: ?Sized>(value: &T) -> Result<u64>$/;"	f
+server	/home/lieroz/blockchain_rust/src/main.rs	/^mod server;$/;"	n
 set	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_derive-1.0.89/src/internals/attr.rs	/^    fn set<A: ToTokens>(&mut self, obj: A, value: T) {$/;"	P	implementation:Attr
 set_domain_sep	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/sha3.rs	/^        fn set_domain_sep(out_len: usize, buf: &mut [u8]) {$/;"	f	method:Sha3::finalize
 set_id	/home/lieroz/blockchain_rust/src/transaction.rs	/^    fn set_id(&mut self) {$/;"	P	implementation:Transaction
@@ -5885,6 +5908,7 @@ square_and_double	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/r
 square_by_mul	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/curve25519.rs	/^    fn square_by_mul() {$/;"	f	module:tests
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, func: F);$/;"	P	interface:StandardPadding
 standard_padding	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/cryptoutil.rs	/^    fn standard_padding<F: FnMut(&[u8])>(&mut self, rem: usize, mut func: F) {$/;"	P	implementation:T
+start	/home/lieroz/blockchain_rust/src/server.rs	/^    pub fn start(node_id: &str, miner_address: &str) {$/;"	P	implementation:Server
 start_node	/home/lieroz/blockchain_rust/src/cli.rs	/^    fn start_node(&self, node_id: &str, miner_address: &str) {$/;"	P	implementation:CLI
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/ring-0.14.6/src/digest.rs	/^    state: State,$/;"	m	struct:Context
 state	/home/lieroz/.cargo/registry/src/github.com-1ecc6299db9ec823/rust-crypto-0.2.36/src/blockmodes.rs	/^    state: BlockEngineState$/;"	m	struct:BlockEngine
