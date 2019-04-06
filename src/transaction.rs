@@ -1,7 +1,6 @@
 use crate::blockchain::Blockchain;
 use crate::utxo_set::UTXOSet;
 use crate::wallet::{self, Wallet};
-use crate::wallets::Wallets;
 
 use crypto::digest::Digest;
 use crypto::sha2::Sha256;
@@ -27,7 +26,7 @@ impl Transaction {
         let mut data = String::from(data);
 
         if data.is_empty() {
-            const CHARSET: &[u8] =  b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+            const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
             abcdefghijklmnopqrstuvwxyz\
             0123456789)(*&^%$#@!~";
 
@@ -49,7 +48,7 @@ impl Transaction {
     }
 
     pub fn new_utxo_tx(
-        from: &str,
+        wallet: &Wallet,
         to: &str,
         amount: i32,
         bc: &mut Blockchain,
@@ -57,8 +56,6 @@ impl Transaction {
     ) -> Transaction {
         let mut inputs = Vec::new();
         let mut outputs = Vec::new();
-        let mut wallets = Wallets::new();
-        let wallet = wallets.get_wallet(from);
         let pub_key_hash = Wallet::hash_pub_key(wallet.public_key());
         let (acc, valid_outputs) = utxo_set.find_spendable_outputs(&pub_key_hash[..], amount);
 
@@ -74,9 +71,10 @@ impl Transaction {
         }
 
         outputs.push(TXOutput::new(amount, to));
+        let from = wallet.get_address();
 
         if acc > amount {
-            outputs.push(TXOutput::new(acc - amount, from))
+            outputs.push(TXOutput::new(acc - amount, &from))
         }
 
         let mut tx = Transaction {
@@ -190,6 +188,10 @@ impl Transaction {
 
     pub fn serialize(&self) -> Vec<u8> {
         bincode::serialize(&self).expect("error serializing Transaction")
+    }
+
+    pub fn deserialize(bytes: Vec<u8>) -> Transaction {
+        bincode::deserialize(&bytes[..]).expect("error decerializing Transaction")
     }
 
     pub fn id(&self) -> &str {

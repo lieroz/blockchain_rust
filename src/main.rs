@@ -9,6 +9,7 @@ mod blockchain;
 mod cli;
 mod merkle_tree;
 mod proofofwork;
+mod server;
 mod transaction;
 mod utxo_set;
 mod wallet;

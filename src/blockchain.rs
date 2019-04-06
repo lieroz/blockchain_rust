@@ -11,7 +11,6 @@ value!(
     }
 );
 
-const BLOCKCHAIN_FILE: &str = "blockchain.db";
 const TIP_KEY: &str = "l";
 const CHECK_KEY: &str = "check_key";
 const CHECK_VALUE: &str = "check_value";
@@ -34,9 +33,10 @@ impl Blockchain {
         }
     }
 
-    pub fn new() -> Blockchain {
+    pub fn new(node_id: &str) -> Blockchain {
+        let db_file = Box::leak(Box::new(format!("blockchain_{}.db", node_id)));
         let mut store =
-            KV::<String, StoreValue>::new(BLOCKCHAIN_FILE).expect("error opening blockchain store");
+            KV::<String, StoreValue>::new(db_file).expect("error opening blockchain store");
 
         if !Blockchain::exists(&mut store) {
             panic!("no existsing blockchain found")
@@ -56,9 +56,9 @@ impl Blockchain {
         Blockchain { store, tip }
     }
 
-    pub fn create(address: &str) -> Blockchain {
-        let mut store =
-            KV::<String, StoreValue>::new(BLOCKCHAIN_FILE).expect("error opening store");
+    pub fn create(node_id: &str, address: &str) -> Blockchain {
+        let db_file = Box::leak(Box::new(format!("blockchain_{}.db", node_id)));
+        let mut store = KV::<String, StoreValue>::new(db_file).expect("error opening store");
 
         if Blockchain::exists(&mut store) {
             panic!("blockchain already exists")
@@ -92,6 +92,62 @@ impl Blockchain {
         Blockchain { store, tip }
     }
 
+    pub fn add_block(&mut self, block: &Block) {
+        match self.store.insert(
+            block.hash().to_string(),
+            StoreValue::Block(block.serialize()),
+        ) {
+            Ok(_) => (),
+            Err(err) => panic!("error while putting new block into store {}", err),
+        }
+        match self.store.insert(
+            TIP_KEY.to_string(),
+            StoreValue::String(block.hash().to_string()),
+        ) {
+            Ok(_) => (),
+            Err(err) => panic!("error while putting tip data into store {}", err),
+        };
+        self.tip = block.hash().to_string();
+    }
+
+    pub fn get_best_height(&mut self) -> i32 {
+        match self
+            .store
+            .get(&self.tip)
+            .expect("error while extracting Block from store")
+        {
+            Some(o) => match o {
+                StoreValue::Block(bytes) => Block::deserialize(bytes).height(),
+                _ => panic!("wrong type returned from store, StoreValue::Block was expected"),
+            },
+            None => panic!("error, tip was corrupted"),
+        }
+    }
+
+    pub fn get_block(&mut self, block_hash: &str) -> Block {
+        match self
+            .store
+            .get(&block_hash.to_string())
+            .expect("error while extracting Block from store")
+        {
+            Some(o) => match o {
+                StoreValue::Block(bytes) => Block::deserialize(bytes),
+                _ => panic!("wrong type returned from store, StoreValue::Block was expected"),
+            },
+            None => panic!("error, block was not found"),
+        }
+    }
+
+    pub fn get_block_hashes(&mut self) -> Vec<String> {
+        let mut block_hashes = Vec::new();
+
+        for block in self.iter() {
+            block_hashes.push(block.hash().to_string());
+        }
+
+        block_hashes
+    }
+
     pub fn mine_block(&mut self, transactions: Vec<Transaction>) -> Block {
         for tx in &transactions {
             if !self.verify_transaction(tx) {
@@ -99,7 +155,8 @@ impl Blockchain {
             }
         }
 
-        let new_block = Block::new(transactions, &self.tip[..]);
+        let height = self.get_best_height();
+        let new_block = Block::new(transactions, &self.tip[..], height + 1);
         match self.store.insert(
             new_block.hash().to_string(),
             StoreValue::Block(new_block.serialize()),

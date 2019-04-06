@@ -9,16 +9,14 @@ value!(
     }
 );
 
-const WALLETS_FILE: &str = "wallets.db";
-
 pub struct Wallets {
     store: KV<String, StoreValue>,
 }
 
 impl Wallets {
-    pub fn new() -> Wallets {
-        let store =
-            KV::<String, StoreValue>::new(WALLETS_FILE).expect("error opening wallet store");
+    pub fn new(node_id: &str) -> Wallets {
+        let db_file = Box::leak(Box::new(format!("wallets_{}.db", node_id)));
+        let store = KV::<String, StoreValue>::new(db_file).expect("error opening wallet store");
         Wallets { store }
     }
 

@@ -14,17 +14,15 @@ value!(
     }
 );
 
-const UTXO_SET_FILE: &str = "utxo_set.db";
-
 pub struct UTXOSet {
     store: KV<String, StoreValue>,
 }
 
 impl UTXOSet {
-    pub fn new() -> UTXOSet {
+    pub fn new(node_id: &str) -> UTXOSet {
+        let db_file = Box::leak(Box::new(format!("utxo_set_{}.db", node_id)));
         UTXOSet {
-            store: KV::<String, StoreValue>::new(UTXO_SET_FILE)
-                .expect("error opening utxo set store"),
+            store: KV::<String, StoreValue>::new(db_file).expect("error opening utxo set store"),
         }
     }
 
@@ -93,13 +91,13 @@ impl UTXOSet {
         self.store.keys().unwrap().len()
     }
 
-    pub fn reindex(&mut self, bc: &mut Blockchain) {
-        if Path::new(UTXO_SET_FILE).exists() {
-            let _ = fs::remove_file(UTXO_SET_FILE);
+    pub fn reindex(&mut self, node_id: &str, bc: &mut Blockchain) {
+        let db_file = Box::leak(Box::new(format!("utxo_set_{}.db", node_id)));
+        if Path::new(&db_file).exists() {
+            let _ = fs::remove_file(&db_file);
         }
 
-        self.store =
-            KV::<String, StoreValue>::new(UTXO_SET_FILE).expect("error opening utxo set store");
+        self.store = KV::<String, StoreValue>::new(db_file).expect("error opening utxo set store");
         let utxo = bc.find_utxo();
 
         for (tx_id, outs) in utxo {
