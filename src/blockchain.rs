@@ -56,7 +56,7 @@ impl Blockchain {
         Blockchain { store, tip }
     }
 
-    pub fn create(address: &str, node_id: &str) -> Blockchain {
+    pub fn create(node_id: &str, address: &str) -> Blockchain {
         let db_file = Box::leak(Box::new(format!("blockchain_{}.db", node_id)));
         let mut store = KV::<String, StoreValue>::new(db_file).expect("error opening store");
 
@@ -93,55 +93,21 @@ impl Blockchain {
     }
 
     pub fn add_block(&mut self, block: &Block) {
-        match self
-            .store
-            .get(&block.hash().to_string())
-            .expect("error while extracting Block from store")
-        {
-            None => return,
-            _ => (),
-        };
         match self.store.insert(
             block.hash().to_string(),
             StoreValue::Block(block.serialize()),
         ) {
             Ok(_) => (),
-            Err(err) => panic!("error while putting Block into store: {}", err),
-        };
-        let last_hash = match self
-            .store
-            .get(&TIP_KEY.to_string())
-            .expect("error while extracting tip data from store")
-        {
-            Some(o) => match o {
-                StoreValue::String(s) => s,
-                _ => panic!("wrong type returned from store, storevalue::string was expected"),
-            },
-            None => panic!("tip data in store was corrupted"),
-        };
-        let last_block_data = match self
-            .store
-            .get(&last_hash)
-            .expect("error while extracting Block from store")
-        {
-            Some(o) => match o {
-                StoreValue::Block(b) => b,
-                _ => panic!("wrong type returned from store, StoreValue::Block was expected"),
-            },
-            None => return,
-        };
-        let last_block = Block::deserialize(last_block_data);
-
-        if block.height() > last_block.height() {
-            match self.store.insert(
-                TIP_KEY.to_string(),
-                StoreValue::String(block.hash().to_string()),
-            ) {
-                Ok(_) => (),
-                Err(err) => panic!("error while putting block data into store: {}", err),
-            };
-            self.tip = block.hash().to_string();
+            Err(err) => panic!("error while putting new block into store {}", err),
         }
+        match self.store.insert(
+            TIP_KEY.to_string(),
+            StoreValue::String(block.hash().to_string()),
+        ) {
+            Ok(_) => (),
+            Err(err) => panic!("error while putting tip data into store {}", err),
+        };
+        self.tip = block.hash().to_string();
     }
 
     pub fn get_best_height(&mut self) -> i32 {

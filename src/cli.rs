@@ -4,8 +4,11 @@ use crate::transaction::Transaction;
 use crate::utxo_set::UTXOSet;
 use crate::wallet::Wallet;
 use crate::wallets::Wallets;
+use crate::server::{Server, TxWrapper};
 
 use std::process;
+use std::net::TcpStream;
+use std::io::{Write};
 
 pub struct CLI<'a> {
     args: &'a [String],
@@ -108,7 +111,7 @@ impl<'a> CLI<'a> {
         println!("Done! There are {} transactions in the UTXO set.", count);
     }
 
-    fn send(&self, node_id: &str, from: &str, to: &str, amount: i32) {
+    fn send(&self, node_id: &str, from: &str, to: &str, amount: i32, mine_now: bool) {
         if !Wallet::validate_address(from) {
             panic!("ERROR: Sender address is not valid");
         }
@@ -121,9 +124,30 @@ impl<'a> CLI<'a> {
         let mut utxo_set = UTXOSet::new(node_id);
         let wallet = Wallets::new(node_id).get_wallet(from);
         let tx = Transaction::new_utxo_tx(&wallet, to, amount, &mut bc, &mut utxo_set);
-        let cbtx = Transaction::new_coin_base_tx(from, "");
-        let block = bc.mine_block(vec![cbtx, tx]);
-        utxo_set.update(&block);
+
+        if mine_now {
+            let cbtx = Transaction::new_coin_base_tx(from, "");
+            let block = bc.mine_block(vec![cbtx, tx]);
+            utxo_set.update(&block);
+        } else {
+            let cmd = b"tx\n";
+            let data = TxWrapper{
+                addr_from: format!("127.0.0.1:{}", node_id),
+                tx: tx.serialize(),
+            };
+            let payload = bincode::serialize(&data).unwrap();
+            let mut request = Vec::new();
+            request.extend(cmd);
+            request.extend(payload);
+            match TcpStream::connect("127.0.0.1:3000") {
+                Ok(mut stream) => {
+                    stream.write(&request).unwrap();
+                    stream.flush().unwrap();
+                },
+                Err(e) => panic!("{}", e),
+            };
+        }
+
         println!("Success!");
     }
 
@@ -139,7 +163,8 @@ impl<'a> CLI<'a> {
                 panic!("Wrong miner address!");
             }
         }
-        // TODO: start_server here
+
+        Server::start(node_id, miner_address);
     }
 
     pub fn run(&self) {
@@ -162,12 +187,22 @@ impl<'a> CLI<'a> {
             "send" => match self.args[2].as_ref() {
                 "-from" => match self.args[4].as_ref() {
                     "-to" => match self.args[6].as_ref() {
-                        "-amount" => self.send(
-                            &node_id,
-                            &self.args[3],
-                            &self.args[5],
-                            self.args[7].parse::<i32>().unwrap(),
-                        ),
+                        "-amount" => match self.args[8].as_ref() {
+                            "-mine" => self.send(
+                                &node_id,
+                                &self.args[3],
+                                &self.args[5],
+                                self.args[7].parse::<i32>().unwrap(),
+                                true,
+                            ),
+                            _ => self.send(
+                                &node_id,
+                                &self.args[3],
+                                &self.args[5],
+                                self.args[7].parse::<i32>().unwrap(),
+                                false,
+                            ),
+                        },
                         _ => self.print_usage(),
                     },
                     _ => self.print_usage(),
